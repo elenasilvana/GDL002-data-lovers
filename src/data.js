@@ -1,13 +1,32 @@
 // esta es una función de ejemplo
 // puedes ver como agregamos la función a nuestro objeto global window
 
-const example = () => {
-  return 'example';
+window.dataLovers = {
+
+
+	//ejemplo:  filterType(POKEMON.pokemon, 'typeGhost')
+
+	//abstracción in progress
+	filterType: function (data, type) {
+
+		//data: debe ser un arreglo de objetos POKEMON.pokemon
+		//type debe ser un string 
+
+		const arrType = [];
+		for(let i = 0; i < data.length; i++){
+
+			if((data[i].type.indexOf(type)) > -1) {
+				arrType.push(data[i]);
+
+			}
+
+		}
+
+		return arrType;
+	}
+
 };
-
-window.example = example;
-
-
+/*
 
 //variable que representa el tipo planta
 const typeGrass = 'Grass';
@@ -49,25 +68,4 @@ function filterType (data, type) {
 
 	return arrType;
 }
-
-
-filterType(POKEMON.pokemon, 'typeGhost')
-
-//abstracción in progress
-function filterType (data, type) {
-
-	//data: debe ser un arreglo de objetos POKEMON.pokemon
-	//type debe ser un string 
-
-	const arrType = [];
-	for(let i = 0; i < data.length; i++){
-
-		if((data[i].type.indexOf(type)) > -1) {
-			arrType.push(data[i]);
-
-		}
-
-	}
-
-	return arrType;
-}
+*/

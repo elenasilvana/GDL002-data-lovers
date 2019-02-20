@@ -1,18 +1,33 @@
+const  elPokemon = dataLovers.filterType(POKEMON.pokemon, "Grass");
 
-//variable que representa el tipo planta
-const typeGrass = 'Grass';
+const pokemonNames = elPokemon.map((pokemon)=> {
+return pokemon.name;
+});
 
-//filtrado para tipo planta
-const arrType = [];
+document.getElementById('root').innerHTML = pokemonNames
+
+/*
+notes
+
+const arrByName = []; 
+
 for(let i = 0; i < POKEMON.pokemon.length; i++){
-
-	for(let j = 0; j < POKEMON.pokemon[i].type.length; j++){
-
-		if(POKEMON.pokemon[i].type[j] === typeGrass) {
-			//arreglo que se llena con los pokemones de tipo
-			arrType.push(POKEMON.pokemon[i].name);
-		}
-
-	}
-
+	arrByName.push(POKEMON.pokemon[i].name);
 }
+
+arrByName.sort();
+
+
+
+POKEMON.pokemon.filter(function(el) { //el es equivalente al pokemon
+return el.name.sort()
+});
+
+window.dataLovers = {
+
+filterType: function ()
+}
+
+
+expect(window.dataLovers.filterType(POKEMON.pokemon, 'Fire'))
+*/
