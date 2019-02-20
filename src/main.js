@@ -15,7 +15,11 @@ function filterType (data, type) {
  return arrType;
 }
 
-const grass= document.getElementById("typeGrass");
+const grass= document.getElementById("typeGrass").value;
 console.log(grass);
-grass.addEventListener('click', filterType(POKEMON.pokemon, grass.value));
-console.log(filterType(POKEMON.pokemon, grass.value));
+grass.addEventListener('click', showType);
+function showType(grass){
+  let typeResult= filterType(POKEMON.pokemon, grass);
+  document.getElementById("root").innerHTML= typeResult;
+}
+//console.log(filterType(POKEMON.pokemon, grass.value));
