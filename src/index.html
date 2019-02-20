@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
+    <div id="root"></div>
     <div class="menu">
     <nav>
   <ul id="main">
@@ -34,7 +35,7 @@
     <div id="pokemonsView">
       <p>Aparecen los botones de tipo</p>
       <br>
-      <div>
+      <div id="buttonsType">
         <button type="button" class="button" id="typeGrass" value="Grass">Planta</button>
         <button type="button" class="button" id="typeWater" value="Water">Agua</button>
         <button type="button" class="button" id="typeGround" value="Ground">Tierra</button>
@@ -54,10 +55,14 @@
         <button type="button" class="button" id="typeIce" value="Ice">Hielo</button>
       </div>
     </div>
-    <div id="root"></div>
-    <script src="data.js"></script>
-    <script src="main.js"></script>
-    <script src="./data/pokemon/pokemon.js"></script>
+    <br>
+    <br>
+    <div id="showTypes"></div>
+
+      <script src="./data/pokemon/pokemon.js"></script>
+      <script src="data.js"></script>
+      <script src="index.js"></script>
+      <!-- <script src="main.js"></script> -->
   </body>
 </html>
 

@@ -1,8 +1,8 @@
-require('../src/data.js');
 const pokemon = require ('../src/data/pokemon/pokemon.json');
+require('../src/data.js');
 
 //el mock debe ir aquí?  y es esto? 
-const POKEMON = {
+/*const POKEMON = {
   "pokemon": [{
     "id": 1,
     "num": "001",
@@ -189,7 +189,7 @@ const POKEMON = {
     }]
   }
 ]};
-
+*/
 
 describe('dataLovers.filterType', () => {
   it('should be a function', () => {

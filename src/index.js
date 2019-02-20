@@ -1,4 +1,3 @@
-
 document.getElementById("welcome").addEventListener("click", showWelcome);
 document.getElementById("story").addEventListener("click", showStory);
 document.getElementById("howToPlay").addEventListener("click", showHowToPlay);
@@ -127,35 +126,17 @@ function showPokemons(){
 	}	
 }
 
-const  elPokemon = dataLovers.filterType(POKEMON.pokemon, "Grass");
+let grass = document.getElementById("typeGrass");
+//document.getElementById("typeGrass")
+grass.addEventListener("click",showFilter);
+//grass.addEventListener("click", function (){
+	//console.log(window.filterType(POKEMON.pokemon, grass.value));
 
-const pokemonNames = elPokemon.map((pokemon)=> {
-return pokemon.name;
-});
+function showFilter(){
+	const typeResult = window.filterType(POKEMON.pokemon, grass.value);
+	const pokemonNames = typeResult.map((pokemon)=> {
+	return pokemon.name;
+	});
+	document.getElementById('showTypes').innerHTML = pokemonNames;
+};
 
-document.getElementById('root').innerHTML = pokemonNames
-
-/*
-notes
-
-const arrByName = []; 
-
-for(let i = 0; i < POKEMON.pokemon.length; i++){
-	arrByName.push(POKEMON.pokemon[i].name);
-}
-
-arrByName.sort();
-
-
-
-POKEMON.pokemon.filter(function(el) { //el es equivalente al pokemon
-return el.name.sort()
-});
-
-window.dataLovers = {
-
-filterType: function ()
-}
-
-
-expect(window.dataLovers.filterType(POKEMON.pokemon, 'Fire'))

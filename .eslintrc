@@ -7,8 +7,8 @@
   },
   "extends": "eslint:recommended",
   "globals": {
-    "cipher": false,
-    "dataLovers": false
+    "dataLovers": false,
+    "filterType": false
   },
   "rules": {
     "no-console": 0,
