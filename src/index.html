@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
+    <div id="root"></div>
     <div class="menu">
     <nav>
   <ul id="main">
@@ -29,12 +30,30 @@
 
     <div id="howToPlayView">
       <p>Breve guía de juego</p>
+      <br>
+      <p>PokemonGo – El juego (imagen icono app)
+        <br>
+        Pokemon (“Pocket Monsters”)- Los animales del juego se llaman pokemones (icono)
+        <br>
+        Poké ball (pokebola) – Para capturar pokemones (icono)
+        <br>
+        Pokeparada – Lugar en el juego al que vas obtener pokebolas y objetos (icono)
+        <br>
+        Gimnasio – Lugar específico donde luchas contra otros equipos dentro del juego (icono)
+        <br>
+        Diario – Lista de tu actividad en el juego (icono)
+        <br>
+        Huevo:
+        Verde = Necesitas caminar 2 km (icono)/ 
+        Amarillo = Necesitas caminar 5 km (icono)/ 
+        Amarillo con Rosa = Necesitas caminar 7 km (icono)/ 
+        Morado = Necesitas caminar 10 km (icono)/</p>
     </div>
 
     <div id="pokemonsView">
       <p>Aparecen los botones de tipo</p>
       <br>
-      <div>
+      <div id="buttonsType">
         <button type="button" class="button" id="typeGrass" value="Grass">Planta</button>
         <button type="button" class="button" id="typeWater" value="Water">Agua</button>
         <button type="button" class="button" id="typeGround" value="Ground">Tierra</button>
@@ -53,11 +72,16 @@
         <button type="button" class="button" id="typeRock" value="Rock">Roca</button>
         <button type="button" class="button" id="typeIce" value="Ice">Hielo</button>
       </div>
+        <br>
+        <br>
+      <div id="showTypes"></div>
     </div>
-    <div id="root"></div>
-    <script src="data.js"></script>
-    <script src="main.js"></script>
-    <script src="./data/pokemon/pokemon.js"></script>
+    
+
+      <script src="./data/pokemon/pokemon.js"></script>
+      <script src="data.js"></script>
+      <script src="index.js"></script>
+      <!-- <script src="main.js"></script> -->
   </body>
 </html>
 

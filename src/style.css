@@ -44,5 +44,5 @@ body{
 }
 
 #pokemonsView{
-  display: none;
+  display: block;
 }
