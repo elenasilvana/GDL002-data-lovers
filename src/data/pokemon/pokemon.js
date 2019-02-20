@@ -1,3 +1,6 @@
+//POKEMON.pokemon[0].type[0]
+//POKEMON es un objeto, con un key: pokemon cuya propiedad es un array con 151 objetos.
+
 var POKEMON = {
   "pokemon": [{
     "id": 1,
