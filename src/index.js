@@ -126,16 +126,48 @@ function showPokemons(){
 	}	
 }
 
-const grass = document.getElementById("typeGrass");
-grass.addEventListener("click",showFilterGrass);
 
+function fillElements (pokemonList, divElement){
+		//qué es divElement?
+	for(let i=0; i<pokemonList.length; i++) {
+	  let divPokemon = document.createElement("div");
+	  //qué es divPokemon.className, qué hace className?
+	  divPokemon.className = "pokemon";
+	  divPokemon.innerHTML = "<img src=\"" +pokemonList[i].img + "\">";
+	  divElement.insertAdjacentElement("beforeend", divPokemon);
+	}
+}
+
+//menor a mayor
+function showPokemons(){
+	let pokemonList = POKEMON.pokemon;
+	let divPokemonList = document.getElementById('showTypes'); 
+	fillElements(pokemonList, divPokemonList);
+
+}
+
+//funcion de prueba para mostrar el tipo
+function showFilter(type){
+	let divPokemonList = document.getElementById('showTypes');
+	const typeResult = window.filterType(POKEMON.pokemon, type.value);
+	fillElements(typeResult, divPokemonList);
+};
+
+
+//funciones que muestran el tipo
+//llamando funcion de prueba que muestra el tipo, aparece activada sin hacer click
+const grass = document.getElementById("typeGrass");
+grass.addEventListener("click", showFilter(grass));
+
+
+/*
+//funcion grass que si sirve
 function showFilterGrass(){
 	const typeResult = window.filterType(POKEMON.pokemon, grass.value);
-	const pokemonNames = typeResult.map((pokemon)=> {
-	return pokemon.name;
-	});
-	document.getElementById('showTypes').innerHTML = pokemonNames;
+	let divPokemonList = document.getElementById('showTypes');
+	fillElements(typeResult, divPokemonList);
 };
+*/
 
 const water = document.getElementById("typeWater");
 water.addEventListener("click",showFilterWater);
@@ -312,3 +344,4 @@ function showFilterIce(){
 	});
 	document.getElementById('showTypes').innerHTML = pokemonNames;
 };
+
