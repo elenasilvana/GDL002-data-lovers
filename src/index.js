@@ -130,11 +130,11 @@ function showPokemons1(){
 function fillElements (pokemonList, divElement){
 		//qué es divElement?
 	for(let i=0; i<pokemonList.length; i++) {
-	  let divPokemon = document.createElement("div");
-	  //qué es divPokemon.className, qué hace className?
-	  divPokemon.className = "pokemon";
-	  divPokemon.innerHTML = "<a href=\"#\"><img src=\"" +pokemonList[i].img + "\"></a>";
-	  divElement.insertAdjacentElement("beforeend", divPokemon);
+	let divPokemon = document.createElement("div");
+	//qué es divPokemon.className, qué hace className?
+	divPokemon.className = "pokemon";
+	divPokemon.innerHTML = "<a href=\"#\"><img src=\"" +pokemonList[i].img + "\"></a>";
+	divElement.insertAdjacentElement("beforeend", divPokemon);
 	}
 }
 
@@ -152,60 +152,60 @@ function showFilter(type){
 	divPokemonList.innerHTML = "";
 	const typeResult = window.filterType(POKEMON.pokemon, type.value);
 	fillElements(typeResult, divPokemonList);
-};
+}
 
 
 //funciones que muestran el tipo
 //llamando funcion de prueba que muestra el tipo, aparece activada sin hacer click
 const grass = document.getElementById("typeGrass");
 grass.addEventListener("click", function () {
-	showFilter(grass)
+	showFilter(grass);
 	});
 
 const water = document.getElementById("typeWater");
-water.addEventListener("click",function () {showFilter(water)});
+water.addEventListener("click",function () {showFilter(water);});
 
 const ground = document.getElementById("typeGround");
-ground.addEventListener("click",function () {showFilter(ground)});
+ground.addEventListener("click",function () {showFilter(ground);});
 
 const psychic = document.getElementById("typePsychic");
 psychic.addEventListener("click",function () {showFilter(psychic)});
 
 const ghost = document.getElementById("typeGhost");
-ghost.addEventListener("click",function () {showFilter(ghost)});
+ghost.addEventListener("click",function () {showFilter(ghost);});
 
 const dark = document.getElementById("typeDark");
-dark.addEventListener("click",function () {showFilter(dark)});
+dark.addEventListener("click",function () {showFilter(dark);});
 
 const poison = document.getElementById("typePoison");
-poison.addEventListener("click",function () {showFilter(poison)});
+poison.addEventListener("click",function () {showFilter(poison);});
 
 const fighting = document.getElementById("typeFighting");
-fighting.addEventListener("click",function () {showFilter(fighting)});
+fighting.addEventListener("click",function () {showFilter(fighting);});
 
 const steel = document.getElementById("typeSteel");
-steel.addEventListener("click",function () {showFilter(steel)});
+steel.addEventListener("click",function () {showFilter(steel);});
 
 const bug = document.getElementById("typeBug");
-bug.addEventListener("click",function () {showFilter(bug)});
+bug.addEventListener("click",function () {showFilter(bug);});
 
 const fire = document.getElementById("typeFire");
-fire.addEventListener("click",function () {showFilter(fire)});
+fire.addEventListener("click",function () {showFilter(fire);});
 
 const dragon = document.getElementById("typeDragon");
-dragon.addEventListener("click",function () {showFilter(dragon)});
+dragon.addEventListener("click",function () {showFilter(dragon);});
 
 const flying = document.getElementById("typeFlying");
-flying.addEventListener("click",function () {showFilter(flying)});
+flying.addEventListener("click",function () {showFilter(flying);});
 
 const normal = document.getElementById("typeNormal");
-normal.addEventListener("click",function () {showFilter(normal)});
+normal.addEventListener("click",function () {showFilter(normal);});
 
 const electric = document.getElementById("typeElectric");
-electric.addEventListener("click",function () {showFilter(electric)});
+electric.addEventListener("click",function () {showFilter(electric);});
 
 const rock = document.getElementById("typeRock");
-rock.addEventListener("click",function () {showFilter(rock)});
+rock.addEventListener("click",function () {showFilter(rock);});
 
 const ice = document.getElementById("typeIce");
-ice.addEventListener("click",function () {showFilter(ice)});
+ice.addEventListener("click",function () {showFilter(ice);});
