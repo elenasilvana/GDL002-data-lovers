@@ -133,7 +133,7 @@ function fillElements (pokemonList, divElement){
 	  let divPokemon = document.createElement("div");
 	  //qué es divPokemon.className, qué hace className?
 	  divPokemon.className = "pokemon";
-	  divPokemon.innerHTML = "<img src=\"" +pokemonList[i].img + "\">";
+	  divPokemon.innerHTML = "<a href=\"#\"><img src=\"" +pokemonList[i].img + "\"></a>";
 	  divElement.insertAdjacentElement("beforeend", divPokemon);
 	}
 }
