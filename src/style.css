@@ -44,5 +44,9 @@ body{
 }
 
 #pokemonsView{
-  display: block;
+  display: none;
+}
+
+.pokemon{
+  float: left;
 }

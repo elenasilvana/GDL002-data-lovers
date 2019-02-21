@@ -28,7 +28,7 @@ const filterType = (data, type) =>{
 //};
 
 window.filterType = filterType;
-/*
+
 
 //variable que representa el tipo planta
 const typeGrass = 'Grass';
@@ -47,7 +47,7 @@ for(let i = 0; i < POKEMON.pokemon.length; i++){
 	}
 
 }
-
+/*
 function filterType (data, type) {
 
 	//data: debe ser un arreglo de objetos POKEMON.pokemon
