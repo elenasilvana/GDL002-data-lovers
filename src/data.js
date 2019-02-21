@@ -1,14 +1,14 @@
 // esta es una función de ejemplo
 // puedes ver como agregamos la función a nuestro objeto global window
 
-window.dataLovers = {
+//window.dataLovers = {
 
 
 	//ejemplo:  filterType(POKEMON.pokemon, 'typeGhost')
 
 	//abstracción in progress
-	filterType: function (data, type) {
-
+const filterType = (data, type) =>{
+		console.log("filterType");
 		//data: debe ser un arreglo de objetos POKEMON.pokemon
 		//type debe ser un string
 
@@ -23,9 +23,11 @@ window.dataLovers = {
 		}
 
 		return arrType;
-	}
+	};
 
-};
+//};
+
+window.filterType = filterType;
 /*
 //variable que representa el tipo planta
 const typeGrass = 'Grass';
