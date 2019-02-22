@@ -137,14 +137,14 @@ function fillElements (pokemonList, divElement){
 	divElement.insertAdjacentElement("beforeend", divPokemon);
 	}
 }
-
+/*
 //menor a mayor
 function showPokemons(){
 	let pokemonList = POKEMON.pokemon;
 	let divPokemonList = document.getElementById('showTypes'); 
 	fillElements(pokemonList, divPokemonList);
-
 }
+*/
 
 //funcion de prueba para mostrar el tipo
 function showFilter(type){
@@ -169,7 +169,7 @@ const ground = document.getElementById("typeGround");
 ground.addEventListener("click",function () {showFilter(ground);});
 
 const psychic = document.getElementById("typePsychic");
-psychic.addEventListener("click",function () {showFilter(psychic)});
+psychic.addEventListener("click",function () {showFilter(psychic);});
 
 const ghost = document.getElementById("typeGhost");
 ghost.addEventListener("click",function () {showFilter(ghost);});
