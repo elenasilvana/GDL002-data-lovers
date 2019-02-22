@@ -5,30 +5,34 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Data Lovers</title>
     <link rel="stylesheet" href="style.css" />
-  </head>
-  <body>
     <div id="root"></div>
-    <div class="menu">
-    <nav>
-  <ul id="main">
-    <li><a id="welcome" href="#">Inicio</a></li>
-    <li><a id="story" href="#">Un poco de historia</a></li>
-    <li><a id="howToPlay" href="#">Cómo Jugar</a></li>
-    <li><a id="pokemons" href="#">Pokemones</a></li>
-    <div id="marker"></div>
-  </ul>
-</nav>
+      <div class="menu">
+      <nav>
+        <ul id="main">
+          <li><a id="welcome" href="#">Inicio</a></li>
+          <li><a id="howToPlay" href="#">La Guía</a></li>
+          <li><a id="pokemons" href="#">Pokemones</a></li>
+          <li><a id="story" href="#">Para saber más</a></li>
+        </ul>
+      </nav>
     </div>
+  </head>
+ 
+  <body>
 
     <div id="welcomeView">
-      <p>Bienvenida y la explicacion de la app</p>
+      <h4>Bienvenida y la explicacion de la app</h4>
+      <sr>
+      <p>Esta aplicaión es para aquellos que deseen conocer un poco sobre PokemonGo y conocer sobre pokemones.</p>
+
     </div>
 
     <div id="storyView">
-      <p>Resumen de la historia de Pokemon</p>
+      <p>Para saber más</p>
     </div>
 
     <div id="howToPlayView">
+      <h4>La Guía</h4>
       <p>Breve guía de juego</p>
       <br>
       <p>PokemonGo – El juego (imagen icono app)
@@ -51,7 +55,7 @@
     </div>
 
     <div id="pokemonsView">
-      <p>Aparecen los botones de tipo</p>
+      <p>Conoce los tipos</p>
       <br>
       <div id="buttonsType">
         <button type="button" class="button" id="typeGrass" value="Grass">Planta</button>
@@ -76,6 +80,8 @@
         <br>
       <div id="showTypes"></div>
     </div>
+
+    <div id=pokemonProfile></div>
     
 
       <script src="./data/pokemon/pokemon.js"></script>
