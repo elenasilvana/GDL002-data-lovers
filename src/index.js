@@ -1,3 +1,5 @@
+
+
 document.getElementById("welcome").addEventListener("click", showWelcome);
 document.getElementById("story").addEventListener("click", showStory);
 document.getElementById("howToPlay").addEventListener("click", showHowToPlay);
@@ -127,11 +129,65 @@ function showPokemons1(){
 }
 
 
+/*function pokemonIconTemplate(pokemon){
+	return `
+	<div class="pokemon">
+		<a href="#">
+			<img src="${pokemon.img}">
+			<h2>${pokemon.name} / Num: ${pokemon.num}
+				<br>
+				<span>(Type: ${pokemon.type})</span>
+			</h2>
+			<h3>Type of candy:</h3> 
+			<p>-${pokemon.candy}</p>
+			<h3>How many candies do you need?:</h3>
+			<p>-${pokemon.candy_count}</p>
+			<h3>Egg:</h3>
+			<p>-${pokemon.egg}</p>
+			<h3>Next evolution:</h3>
+			<p>-${pokemon.next_evolution}</p>
+		</a>
+	</div>
+	`
+}*/
+function pokemonIconTemplate(pokemon){
+	return `
+	<div class="pokemon">
+		<div class="pokemonImage">
+		<a href="#">
+			<img src="${pokemon.img}">
+		</a>
+		</div>
+		<div class="pokemonDatos">
+			<h2>${pokemon.name} / Num: ${pokemon.num}
+				<br>
+				(Type: ${pokemon.type})
+			</h2>
+		</div>
+	</div>
+	`
+}
+
+
+function pokemonProfile (data){
+document.getElementById("showTypes").innerHTML = `
+<h1>Pokemons (${data.length} results)</h1>
+${data.map(pokemonIconTemplate).join("")}`
+}
+
+/* pokemonProfile (POKEMON.pokemon){
+document.getElementById("showTypes").innerHTML = `
+<h1>Pokemons (${data.length} results)</h1>
+${data.map(pokemonIconTemplate).join("")}`
+}*/
+
+//document.getElementById("pokemons").addEventListener("click", pokemonProfile(POKEMON.pokemon));
+
+
+
 function fillElements (pokemonList, divElement){
-		//qué es divElement?
 	for(let i=0; i<pokemonList.length; i++) {
 	let divPokemon = document.createElement("div");
-	//qué es divPokemon.className, qué hace className?
 	divPokemon.className = "pokemon";
 	divPokemon.innerHTML = "<a href=\"#\"><img src=\"" +pokemonList[i].img + "\"></a>";
 	divElement.insertAdjacentElement("beforeend", divPokemon);
@@ -146,12 +202,14 @@ function showPokemons(){
 }
 */
 
+
 //funcion de prueba para mostrar el tipo
 function showFilter(type){
 	let divPokemonList = document.getElementById('showTypes');
 	divPokemonList.innerHTML = "";
 	const typeResult = window.filterType(POKEMON.pokemon, type.value);
-	fillElements(typeResult, divPokemonList);
+	pokemonProfile(typeResult);
+	//fillElements(typeResult, divPokemonList);
 }
 
 
