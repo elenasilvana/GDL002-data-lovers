@@ -50,19 +50,53 @@ body{
 }
 
 #pokemonsView{
+  text-align: center;
+  width: auto;
   font-size: 1.95em;
   display: none;
   padding: 7% 3%;
 }
 
 #buttonsType{
-  display: flex;
-  justify-content: space-between;
+  padding: 0% 3%;
 }
 button{
   padding: 5px;
 }
 .pokemon{
+  padding: 3%;
+  margin: 1% 1%;
   float: left;
+  background-color: #D5D5D5;
+  box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
 }
 
+.pokemon p{
+  text-align: left;
+  font-size: 0.55em;
+  color: #939393;
+}
+
+a{
+  text-decoration: none;
+}
+
+.pokemon:hover{
+  background-color: #C8BFBF;
+}
+
+h1{
+  font-size: 0.95em;
+}
+
+h2{
+  font-size: 0.55em;
+  color: #939393;
+}
+
+h3{
+  text-align: left;
+  font-size: 0.55em;
+  color: #939393;
+}

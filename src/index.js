@@ -1,3 +1,5 @@
+
+
 document.getElementById("welcome").addEventListener("click", showWelcome);
 document.getElementById("story").addEventListener("click", showStory);
 document.getElementById("howToPlay").addEventListener("click", showHowToPlay);
@@ -127,11 +129,41 @@ function showPokemons1(){
 }
 
 
+function pokemonIconTemplate(pokemon){
+	return `
+	<div class="pokemon">
+		<a href="#">
+			<img src="${pokemon.img}">
+			<h2>${pokemon.name} / Num: ${pokemon.num}
+				<br>
+				<span>(Type: ${pokemon.type})</span>
+			</h2>
+			<h3>Type of candy:</h3> 
+			<p>-${pokemon.candy}</p>
+			<h3>How many candies do you need?:</h3>
+			<p>-${pokemon.candy_count}</p>
+			<h3>Egg:</h3>
+			<p>-${pokemon.egg}</p>
+			<h3>Next evolution:</h3>
+			<p>-${pokemon.next_evolution}</p>
+		</a>
+	</div>
+	`
+}
+
+function pokemonProfile (){
+document.getElementById("showTypes").innerHTML = `
+<h1>Pokemons (${POKEMON.pokemon.length} results)</h1>
+${POKEMON.pokemon.map(pokemonIconTemplate).join("")}`
+}
+
+document.getElementById("pokemons").addEventListener("click", pokemonProfile);
+
+
+
 function fillElements (pokemonList, divElement){
-		//qué es divElement?
 	for(let i=0; i<pokemonList.length; i++) {
 	let divPokemon = document.createElement("div");
-	//qué es divPokemon.className, qué hace className?
 	divPokemon.className = "pokemon";
 	divPokemon.innerHTML = "<a href=\"#\"><img src=\"" +pokemonList[i].img + "\"></a>";
 	divElement.insertAdjacentElement("beforeend", divPokemon);
@@ -143,8 +175,8 @@ function showPokemons(){
 	let pokemonList = POKEMON.pokemon;
 	let divPokemonList = document.getElementById('showTypes'); 
 	fillElements(pokemonList, divPokemonList);
-
 }
+
 
 //funcion de prueba para mostrar el tipo
 function showFilter(type){
