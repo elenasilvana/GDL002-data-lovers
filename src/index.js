@@ -209,3 +209,29 @@ rock.addEventListener("click",function () {showFilter(rock);});
 
 const ice = document.getElementById("typeIce");
 ice.addEventListener("click",function () {showFilter(ice);});
+
+
+/*
+//no usar metodo directamente con la data, y hacerlo función, probar antes para comprobar
+const reversePokedex = POKEMON.pokemon;
+reversePokedex.reverse();
+
+
+const arrPokemons = POKEMON.pokemon;
+
+//arreglo de nombres ordenado
+const pokemonNames = arrPokemons.map((obj) => {return obj.name}).sort()
+
+//falta iterar nombres del arreglo con los objetos del objeto para retornar un orden alfabetico
+
+for(let i = 0; i < pokemonNames.length; i++) {
+	POKEMON.pokemon.filter(obj) => 
+}
+
+const arrOrdered = [];
+for(let i = 0; i < pokemonNames.lenght; i++ ){
+	if(POKEMON.pokemon[i].name  === pokemonNames[i])
+		arrOrdered.push(POKEMON.pokemon[i])
+
+}
+*/
