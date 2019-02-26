@@ -268,6 +268,9 @@ rock.addEventListener("click",function () {showFilter(rock);});
 const ice = document.getElementById("typeIce");
 ice.addEventListener("click",function () {showFilter(ice);});
 
+const aToZ = document.getElementById("alphabetical");
+aToZ.addEventListener("click", );
+
 
 /*
 //no usar metodo directamente con la data, y hacerlo función, probar antes para comprobar

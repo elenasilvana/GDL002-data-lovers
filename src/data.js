@@ -28,79 +28,102 @@ const filterType = (data, type) =>{
 //};
 
 //orden alfabético
+/*
+const alphabeticalOrder = (data) => {
+	//debe ser un array con objetos
 
-const alphabeticalOrder = (arrNames, arrObj) => {
+	//genera un arreglo con nombres ordenados alfabeticamente A - Z
+	const orderByName = data.map((obj) => {return obj.name}).sort();
+
 
 	const arrAlphabetical = []; 
-	for(let i = 0; i < arrNames.length; i++){
+	for(let i = 0; i < orderByName.length; i++){
 
-		for(let j = 0; j < arrObj.length ; j++ ){
+		for(let j = 0; j < data.length ; j++ ){
 			//console.log(pokemonNames[i], arrPokemons[j].name);
-			if (arrNames[i] === arrObj[j].name){
-				arrAlphabetical.push(arrObj[j]);
+			//genera un array con los objetos ordenados alfabeticamente
+			if (orderByName[i] === data[j].name){
+				arrAlphabetical.push(data[j]);
 			}
 		}
 
 	}
+	return arrAlphabetical
 };
+*/
+
+const alphabeticalOrder = (data) => {
+	const orderByName = data.map((obj) => {return obj.name}).sort();
+	const pokemonByName = orderByName.map((name) => data.filter(pokemon => pokemon.name === name)[0]);
+
+	return pokemonByName;
+}
+
+const alphabeticalOrderExplicado = (data) => {
+	const orderByName = data.map((obj) => {return obj.name}).sort();
+	const pokemonByName = orderByName.map((name) => {
+		return data.filter(pokemon => {
+			return pokemon.name === name;
+		})[0];
+	});
+
+	return pokemonByName;
+}
 
 window.alphabeticalOrder = alphabeticalOrder;
 window.filterType = filterType;
 
 /*
 
-const arrAlphabetical = []; 
-	for(let i = 0; i < pokemonNames.length; i++){
 
-		for(let j = 0; j < arrPokemons.length ; j++ ){
-			//console.log(pokemonNames[i], arrPokemons[j].name);
-			if (pokemonNames[i] === arrPokemons[j].name){
-				arrAlphabetical.push(arrPokemons[j]);
-			}
-		}
-
-	}
-
-
-//variable que representa el tipo planta
-const typeGrass = 'Grass';
-
-//filtrado para tipo planta
-const arrType = [];
-for(let i = 0; i < POKEMON.pokemon.length; i++){
-
-	for(let j = 0; j < POKEMON.pokemon[i].type.length; j++){
-
-		if(POKEMON.pokemon[i].type[j] === typeGrass) {
-			//arreglo que se llena con los pokemones de tipo
-			arrType.push(POKEMON.pokemon[i]);
-		}
-
-	}
-
-}
-*/
 /*
-function filterType (data, type) {
 
-	//data: debe ser un arreglo de objetos POKEMON.pokemon
-	//type debe ser un string 
+//función simplificada que ordena de A-Z
 
-	const arrType = [];
-	for(let i = 0; i < data.length; i++){
+const alphabeticalOrder = (data) => {
+	const orderByName = data.map((obj) => {return obj.name}).sort();
+	const pokemonByName = orderByName.map((name) => data.filter(pokemon => pokemon.name === name)[0]);
 
-		for(let j = 0; j < data[i].type.length; j++){
+	return pokemonByName;
+}
 
-			if(data[i].type[j] === type) {
-				//arreglo que se llena con los pokemones de tipo
-				arrType.push(data[i]);
-				break;
+const alphabeticalOrderExplicado = (data) => {
+	const orderByName = data.map((obj) => {return obj.name}).sort();
+	const pokemonByName = orderByName.map((name) => {
+		return data.filter(pokemon => {
+			return pokemon.name === name;
+		})[0];
+	});
+
+	return pokemonByName;
+}
+
+*/
+
+/*
+
+
+const alphabeticalOrderZtoA = (data) => {
+	//debe ser un array con objetos
+
+	//genera un arreglo con nombres ordenados alfabeticamente Z-A
+	const orderByName = data.map((obj) => {return obj.name}).sort();
+	orderByName = orderByName.reverse(); 
+
+
+	const arrAlphabetical = []; 
+	for(let i = 0; i < orderByName.length; i++){
+
+		for(let j = 0; j < data.length ; j++ ){
+			//console.log(pokemonNames[i], arrPokemons[j].name);
+			//genera un array con los objetos ordenados alfabeticamente
+			if (orderByName[i] === data[j].name){
+				arrAlphabetical.push(data[j]);
 			}
-
 		}
 
 	}
+	return arrAlphabetical
+};
 
-	return arrType;
-}
 */
