@@ -52,12 +52,14 @@ const alphabeticalOrder = (data) => {
 };
 */
 
+//order by name A - Z
 const alphabeticalOrder = (data) => {
 	const orderByName = data.map((obj) => {return obj.name}).sort();
+	console.log('order by name' + orderByName);
 	const pokemonByName = orderByName.map((name) => data.filter(pokemon => pokemon.name === name)[0]);
 
 	return pokemonByName;
-}
+};
 
 const alphabeticalOrderExplicado = (data) => {
 	const orderByName = data.map((obj) => {return obj.name}).sort();
@@ -68,8 +70,20 @@ const alphabeticalOrderExplicado = (data) => {
 	});
 
 	return pokemonByName;
+};
+
+//order Z - A
+const alphabeticalInverseOrder = (data) => {
+	const orderByName = data.map((obj) => {return obj.name}).sort().reverse();
+	console.log('order by name inverse ' + orderByName);
+
+
+	const pokemonByName = orderByName.map((name) => data.filter(pokemon => pokemon.name === name)[0]);
+
+	return pokemonByName;
 }
 
+window.alphabeticalInverseOrder = alphabeticalInverseOrder;
 window.alphabeticalOrder = alphabeticalOrder;
 window.filterType = filterType;
 
