@@ -10,7 +10,7 @@
 const filterType = (data, type) =>{
 		console.log("filterType");
 		//data: debe ser un arreglo de objetos POKEMON.pokemon
-		//type debe ser un string 
+		//type debe ser un string
 
 		const arrType = [];
 		for(let i = 0; i < data.length; i++){
@@ -73,6 +73,7 @@ const alphabeticalOrderExplicado = (data) => {
 window.alphabeticalOrder = alphabeticalOrder;
 window.filterType = filterType;
 
+
 /*
 
 
@@ -119,11 +120,7 @@ const alphabeticalOrderZtoA = (data) => {
 			//genera un array con los objetos ordenados alfabeticamente
 			if (orderByName[i] === data[j].name){
 				arrAlphabetical.push(data[j]);
-			}
-		}
 
-	}
-	return arrAlphabetical
-};
-
+}
 */
+

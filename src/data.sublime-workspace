@@ -27,7 +27,7 @@
 			"file": "data.js",
 			"settings":
 			{
-				"buffer_size": 1351,
+				"buffer_size": 2873,
 				"encoding": "UTF-8",
 				"line_ending": "Unix"
 			}
@@ -137,15 +137,15 @@
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 1351,
+						"buffer_size": 2873,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								428,
-								428
+								0,
+								0
 							]
 						],
 						"settings":

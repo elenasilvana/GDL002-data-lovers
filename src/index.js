@@ -13,7 +13,7 @@ const viewFour = document.getElementById("pokemonsView");
 function showWelcome(){
 	if (viewOne.style.display == 'none') {
 		viewOne.style.display = 'block';
-	}	
+	}
 	else {
 		viewOne.style.display = 'block';
 
@@ -44,7 +44,7 @@ function showWelcome(){
 function showStory(){
 	if (viewOne.style.display == 'block') {
 		viewOne.style.display = 'none';
-	}	
+	}
 	else {
 		viewOne.style.display = 'none';
 
@@ -93,7 +93,7 @@ function showHowToPlay(){
 	}
 	if (viewFour.style.display == 'block') {
 		viewFour.style.display = 'none';
-	}	
+	}
 	else {
 		viewFour.style.display = 'none';
 
@@ -121,11 +121,11 @@ function showPokemons1(){
 	}
 	if (viewFour.style.display == 'none') {
 		viewFour.style.display = 'block';
-	}	
+	}
 	else {
 		viewFour.style.display = 'block';
 
-	}	
+	}
 }
 
 
@@ -138,7 +138,7 @@ function showPokemons1(){
 				<br>
 				<span>(Type: ${pokemon.type})</span>
 			</h2>
-			<h3>Type of candy:</h3> 
+			<h3>Type of candy:</h3>
 			<p>-${pokemon.candy}</p>
 			<h3>How many candies do you need?:</h3>
 			<p>-${pokemon.candy_count}</p>
@@ -197,7 +197,7 @@ function fillElements (pokemonList, divElement){
 //menor a mayor
 function showPokemons(){
 	let pokemonList = POKEMON.pokemon;
-	let divPokemonList = document.getElementById('showTypes'); 
+	let divPokemonList = document.getElementById('showTypes');
 	fillElements(pokemonList, divPokemonList);
 }
 */
@@ -233,7 +233,7 @@ const ghost = document.getElementById("typeGhost");
 ghost.addEventListener("click",function () {showFilter(ghost);});
 
 const dark = document.getElementById("typeDark");
-dark.addEventListener("click",function () {showFilter(dark);});
+dark.addEventListener("click",function () {showFilter(dark); showText();});
 
 const poison = document.getElementById("typePoison");
 poison.addEventListener("click",function () {showFilter(poison);});
@@ -242,7 +242,7 @@ const fighting = document.getElementById("typeFighting");
 fighting.addEventListener("click",function () {showFilter(fighting);});
 
 const steel = document.getElementById("typeSteel");
-steel.addEventListener("click",function () {showFilter(steel);});
+steel.addEventListener("click",function () {showFilter(steel); showText();});
 
 const bug = document.getElementById("typeBug");
 bug.addEventListener("click",function () {showFilter(bug);});
@@ -268,8 +268,14 @@ rock.addEventListener("click",function () {showFilter(rock);});
 const ice = document.getElementById("typeIce");
 ice.addEventListener("click",function () {showFilter(ice);});
 
+
 const aToZ = document.getElementById("alphabetical");
 aToZ.addEventListener("click", );
+
+function showText(){
+	const text= ("Este tipo de pokemon no se encuentra en la region de kanto");
+	showTypes.innerHTML= text;
+}
 
 
 /*
@@ -286,7 +292,7 @@ const pokemonNames = arrPokemons.map((obj) => {return obj.name}).sort()
 //falta iterar nombres del arreglo con los objetos del objeto para retornar un orden alfabetico
 
 for(let i = 0; i < pokemonNames.length; i++) {
-	POKEMON.pokemon.filter(obj) => 
+	POKEMON.pokemon.filter(obj) =>
 }
 
 const arrOrdered = [];
