@@ -27,9 +27,40 @@ const filterType = (data, type) =>{
 
 //};
 
+//orden alfabético
+
+const alphabeticalOrder = (arrNames, arrObj) => {
+
+	const arrAlphabetical = []; 
+	for(let i = 0; i < arrNames.length; i++){
+
+		for(let j = 0; j < arrObj.length ; j++ ){
+			//console.log(pokemonNames[i], arrPokemons[j].name);
+			if (arrNames[i] === arrObj[j].name){
+				arrAlphabetical.push(arrObj[j]);
+			}
+		}
+
+	}
+};
+
+window.alphabeticalOrder = alphabeticalOrder;
 window.filterType = filterType;
 
 /*
+
+const arrAlphabetical = []; 
+	for(let i = 0; i < pokemonNames.length; i++){
+
+		for(let j = 0; j < arrPokemons.length ; j++ ){
+			//console.log(pokemonNames[i], arrPokemons[j].name);
+			if (pokemonNames[i] === arrPokemons[j].name){
+				arrAlphabetical.push(arrPokemons[j]);
+			}
+		}
+
+	}
+
 
 //variable que representa el tipo planta
 const typeGrass = 'Grass';
