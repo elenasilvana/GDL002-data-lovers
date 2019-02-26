@@ -268,10 +268,15 @@ rock.addEventListener("click",function () {showFilter(rock);});
 const ice = document.getElementById("typeIce");
 ice.addEventListener("click",function () {showFilter(ice);});
 
+
+const aToZ = document.getElementById("alphabetical");
+aToZ.addEventListener("click", );
+
 function showText(){
 	const text= ("Este tipo de pokemon no se encuentra en la region de kanto");
 	showTypes.innerHTML= text;
 }
+
 
 /*
 //no usar metodo directamente con la data, y hacerlo función, probar antes para comprobar
