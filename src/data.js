@@ -28,6 +28,7 @@ const filterType = (data, type) =>{
 //};
 
 window.filterType = filterType;
+
 /*
 //variable que representa el tipo planta
 const typeGrass = 'Grass';
