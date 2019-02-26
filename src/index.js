@@ -184,7 +184,7 @@ ${data.map(pokemonIconTemplate).join("")}`
 //document.getElementById("pokemons").addEventListener("click", pokemonProfile(POKEMON.pokemon));
 
 
-
+//ya no la usamos
 function fillElements (pokemonList, divElement){
 	for(let i=0; i<pokemonList.length; i++) {
 	let divPokemon = document.createElement("div");
@@ -209,6 +209,8 @@ function showFilter(type){
 	divPokemonList.innerHTML = "";
 	const typeResult = window.filterType(POKEMON.pokemon, type.value);
 	pokemonProfile(typeResult);
+	console.log(typeResult)
+	return typeResult;
 	//fillElements(typeResult, divPokemonList);
 }
 
@@ -268,12 +270,28 @@ rock.addEventListener("click",function () {showFilter(rock);});
 const ice = document.getElementById("typeIce");
 ice.addEventListener("click",function () {showFilter(ice);});
 
+//boton A-Z 
+function showAlphabetical () {
+	const allPokemons = POKEMON.pokemon;
+	const ordererPokemons = alphabeticalOrder(allPokemons);
+	pokemonProfile(ordererPokemons);
+}
+//boton Z-A
+function showAlphabeticalInverse () {
+	const allPokemons = POKEMON.pokemon;
+	const ordererPokemons = alphabeticalInverseOrder(allPokemons);
+	pokemonProfile(ordererPokemons);
+}
 
+//y cómo obtengo la data que debo pasarle al boton? 
 const aToZ = document.getElementById("alphabetical");
-aToZ.addEventListener("click", );
+aToZ.addEventListener("click", showAlphabetical);
+
+const zToA = document.getElementById("alphabeticalInverse");
+zToA.addEventListener("click", showAlphabeticalInverse)
 
 function showText(){
-	const text= ("Este tipo de pokemon no se encuentra en la region de kanto");
+	const text = ("Este tipo de pokemon no se encuentra en la region de kanto");
 	showTypes.innerHTML= text;
 }
 
