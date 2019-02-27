@@ -1,12 +1,4 @@
-// esta es una función de ejemplo
-// puedes ver como agregamos la función a nuestro objeto global window
 
-//window.dataLovers = {
-
-
-	//ejemplo:  filterType(POKEMON.pokemon, 'typeGhost')
-
-	//abstracción in progress
 const filterType = (data, type) =>{
 		console.log("filterType");
 		//data: debe ser un arreglo de objetos POKEMON.pokemon
@@ -27,6 +19,7 @@ const filterType = (data, type) =>{
 
 //};
 
+window.filterType = filterType;
 //orden alfabético
 /*
 const alphabeticalOrder = (data) => {
@@ -137,4 +130,3 @@ const alphabeticalOrderZtoA = (data) => {
 
 }
 */
-
