@@ -270,7 +270,7 @@ rock.addEventListener("click",function () {showFilter(rock);});
 const ice = document.getElementById("typeIce");
 ice.addEventListener("click",function () {showFilter(ice);});
 
-//boton A-Z 
+//boton A-Z
 function showAlphabetical () {
 	const allPokemons = POKEMON.pokemon;
 	const ordererPokemons = alphabeticalOrder(allPokemons);
@@ -283,12 +283,15 @@ function showAlphabeticalInverse () {
 	pokemonProfile(ordererPokemons);
 }
 
-//y cómo obtengo la data que debo pasarle al boton? 
+//y cómo obtengo la data que debo pasarle al boton?
 const aToZ = document.getElementById("alphabetical");
 aToZ.addEventListener("click", showAlphabetical);
 
 const zToA = document.getElementById("alphabeticalInverse");
 zToA.addEventListener("click", showAlphabeticalInverse)
+
+const botonModaDescendente= document.getElementById("moda-descendente");
+botonModaDescendente.addEventListener("click", function (){console.log("hola")});
 
 function showText(){
 	const text = ("Este tipo de pokemon no se encuentra en la region de kanto");
