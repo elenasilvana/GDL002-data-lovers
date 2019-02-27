@@ -5,19 +5,24 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Data Lovers</title>
     <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+
     <div id="root"></div>
-      <div class="menu">
-      <nav>
-        <ul id="main">
-          <li><a id="welcome" href="#">Inicio</a></li>
-          <li><a id="howToPlay" href="#">La Guía</a></li>
-          <li><a id="pokemons" href="#">Pokemones</a></li>
-          <li><a id="story" href="#">Para saber más</a></li>
-        </ul>
-      </nav>
+
+    <div class="menu">
+    <nav>
+  <ul id="main">
+    <li><a id="welcome" href="#">Inicio</a></li>
+    <li><a id="story" href="#">Un poco de historia</a></li>
+    <li><a id="howToPlay" href="#">Cómo Jugar</a></li>
+    <li><a id="pokemons" href="#">Pokemones</a></li>
+    <div id="marker"></div>
+  </ul>
+</nav>
     </div>
   </head>
- 
+
   <body>
 
     <div id="welcomeView">
@@ -34,9 +39,10 @@
     <div id="howToPlayView">
       <h4>La Guía</h4>
       <p>Breve guía de juego</p>
+
       <br>
       <p>PokemonGo – El juego (imagen icono app)
-        <br>
+
         Pokemon (“Pocket Monsters”)- Los animales del juego se llaman pokemones (icono)
         <br>
         Poké ball (pokebola) – Para capturar pokemones (icono)
@@ -48,9 +54,9 @@
         Diario – Lista de tu actividad en el juego (icono)
         <br>
         Huevo:
-        Verde = Necesitas caminar 2 km (icono)/ 
-        Amarillo = Necesitas caminar 5 km (icono)/ 
-        Amarillo con Rosa = Necesitas caminar 7 km (icono)/ 
+        Verde = Necesitas caminar 2 km (icono)/
+        Amarillo = Necesitas caminar 5 km (icono)/
+        Amarillo con Rosa = Necesitas caminar 7 km (icono)/
         Morado = Necesitas caminar 10 km (icono)/</p>
     </div>
 
@@ -97,20 +103,21 @@
         <button type="button" class="button" id="typeRock" value="Rock">Roca</button>
         <button type="button" class="button" id="typeIce" value="Ice">Hielo</button> 
       </div>
+      <button type="button" class="order" id="alphabetical">A-Z</button>
+      <button type="button" class="order" id="alphabeticalInverse">Z-A</button>
+
         <br>
         <br>
       <div id="showTypes"></div>
-   
+
      <div id=pokemonProfile></div>
     </div>
 
-    
 
       <script src="./data/pokemon/pokemon.js"></script>
       <script src="data.js"></script>
       <script src="index.js"></script>
       <!-- <script src="main.js"></script> -->
+
   </body>
 </html>
-
-

@@ -1,8 +1,9 @@
-const pokemon = require ('../src/data/pokemon/pokemon.json');
+//const pokemon = require ('../src/data/pokemon/pokemon.json');
 require('../src/data.js');
+const pokemonFilterMock = require('../src/data/pokemonFilter.json');
 
 //el mock debe ir aquí?  y es esto? 
-/*const POKEMON = {
+  const POKEMON = {
   "pokemon": [{
     "id": 1,
     "num": "001",
@@ -189,17 +190,37 @@ require('../src/data.js');
     }]
   }
 ]};
-*/
 
-describe('dataLovers.filterType', () => {
-  it('should be a function', () => {
-    expect(typeof dataLovers.filterType).toBe('function');
+
+describe('filterType', () => {
+
+  it('it should be a function', () => {
+    expect(typeof window.filterType).toBe('function');
   });
 
-//  it('returns `dataLovers.filterType`', () => {
-//    expect(dataLovers.filterType(POKEMON.pokemon, 'Grass')).toBe('example');
-//  });
+  it('returns `filterType`', () => {
+      expect(window.filterType(POKEMON.pokemon, 'Grass').length).toBe(3);
+    });
+
+  it('returns `filterType`', () => {
+    expect(window.filterType(POKEMON.pokemon, 'Dark').length).toBe(0);
+  });
+
+
 });
+
+describe('alphabeticalOrder', () => {
+  it('it should be a function', () => {
+    expect(typeof window.alphabeticalOrder).toBe('function');
+  } 
+
+  it('returns `alphabeticalOrder`', () => {
+    expect(window.filterType(POKEMON.pokemon, 'Grass')).toBe(pokemonFilterMock);
+  });
+  
+});
+//crear un archivo por cada json de respuesta
+
 
 /* antes de correr los test se corren los linters
 

@@ -13,7 +13,7 @@ const viewFour = document.getElementById("pokemonsView");
 function showWelcome(){
 	if (viewOne.style.display == 'none') {
 		viewOne.style.display = 'block';
-	}	
+	}
 	else {
 		viewOne.style.display = 'block';
 
@@ -44,7 +44,7 @@ function showWelcome(){
 function showStory(){
 	if (viewOne.style.display == 'block') {
 		viewOne.style.display = 'none';
-	}	
+	}
 	else {
 		viewOne.style.display = 'none';
 
@@ -93,7 +93,7 @@ function showHowToPlay(){
 	}
 	if (viewFour.style.display == 'block') {
 		viewFour.style.display = 'none';
-	}	
+	}
 	else {
 		viewFour.style.display = 'none';
 
@@ -121,13 +121,12 @@ function showPokemons1(){
 	}
 	if (viewFour.style.display == 'none') {
 		viewFour.style.display = 'block';
-	}	
+	}
 	else {
 		viewFour.style.display = 'block';
 
-	}	
+	}
 }
-
 
 
 function pokemonIconTemplate(pokemon){
@@ -197,14 +196,18 @@ document.getElementById("showTypes").innerHTML = `
 ${data.map(pokemonProfileTemplate).join("")}`
 }*/
 
-/*
-//menor a mayor
-function showPokemons(){
-	let pokemonList = POKEMON.pokemon;
-	let divPokemonList = document.getElementById('showTypes'); 
-	fillElements(pokemonList, divPokemonList);
+
+//ya no la usamos
+function fillElements (pokemonList, divElement){
+	for(let i=0; i<pokemonList.length; i++) {
+	let divPokemon = document.createElement("div");
+	divPokemon.className = "pokemon";
+	divPokemon.innerHTML = "<a href=\"#\"><img src=\"" +pokemonList[i].img + "\"></a>";
+	divElement.insertAdjacentElement("beforeend", divPokemon);
+	}
 }
-*/
+
+
 
 //funcion de prueba para mostrar el tipo
 function showFilter(type){
@@ -212,6 +215,10 @@ function showFilter(type){
 	divPokemonList.innerHTML = "";
 	const typeResult = window.filterType(POKEMON.pokemon, type.value);
 	pokemonIcon(typeResult);
+	pokemonProfile(typeResult);
+	console.log(typeResult)
+	return typeResult;
+	//fillElements(typeResult, divPokemonList);
 }
 
 
@@ -229,13 +236,13 @@ const ground = document.getElementById("typeGround");
 ground.addEventListener("click",function () {showFilter(ground);});
 
 const psychic = document.getElementById("typePsychic");
-psychic.addEventListener("click",function () {showFilter(psychic)});
+psychic.addEventListener("click",function () {showFilter(psychic);});
 
 const ghost = document.getElementById("typeGhost");
 ghost.addEventListener("click",function () {showFilter(ghost);});
 
 const dark = document.getElementById("typeDark");
-dark.addEventListener("click",function () {showFilter(dark);});
+dark.addEventListener("click",function () {showFilter(dark); showText();});
 
 const poison = document.getElementById("typePoison");
 poison.addEventListener("click",function () {showFilter(poison);});
@@ -244,7 +251,7 @@ const fighting = document.getElementById("typeFighting");
 fighting.addEventListener("click",function () {showFilter(fighting);});
 
 const steel = document.getElementById("typeSteel");
-steel.addEventListener("click",function () {showFilter(steel);});
+steel.addEventListener("click",function () {showFilter(steel); showText();});
 
 const bug = document.getElementById("typeBug");
 bug.addEventListener("click",function () {showFilter(bug);});
@@ -269,3 +276,54 @@ rock.addEventListener("click",function () {showFilter(rock);});
 
 const ice = document.getElementById("typeIce");
 ice.addEventListener("click",function () {showFilter(ice);});
+
+//boton A-Z 
+function showAlphabetical () {
+	const allPokemons = POKEMON.pokemon;
+	const ordererPokemons = alphabeticalOrder(allPokemons);
+	pokemonProfile(ordererPokemons);
+}
+//boton Z-A
+function showAlphabeticalInverse () {
+	const allPokemons = POKEMON.pokemon;
+	const ordererPokemons = alphabeticalInverseOrder(allPokemons);
+	pokemonProfile(ordererPokemons);
+}
+
+//y cómo obtengo la data que debo pasarle al boton? 
+const aToZ = document.getElementById("alphabetical");
+aToZ.addEventListener("click", showAlphabetical);
+
+const zToA = document.getElementById("alphabeticalInverse");
+zToA.addEventListener("click", showAlphabeticalInverse)
+
+function showText(){
+	const text = ("Este tipo de pokemon no se encuentra en la region de kanto");
+	showTypes.innerHTML= text;
+}
+
+
+/*
+//no usar metodo directamente con la data, y hacerlo función, probar antes para comprobar
+const reversePokedex = POKEMON.pokemon;
+reversePokedex.reverse();
+
+
+const arrPokemons = POKEMON.pokemon;
+
+//arreglo de nombres ordenado
+const pokemonNames = arrPokemons.map((obj) => {return obj.name}).sort()
+
+//falta iterar nombres del arreglo con los objetos del objeto para retornar un orden alfabetico
+
+for(let i = 0; i < pokemonNames.length; i++) {
+	POKEMON.pokemon.filter(obj) =>
+}
+
+const arrOrdered = [];
+for(let i = 0; i < pokemonNames.lenght; i++ ){
+	if(POKEMON.pokemon[i].name  === pokemonNames[i])
+		arrOrdered.push(POKEMON.pokemon[i])
+
+}
+*/

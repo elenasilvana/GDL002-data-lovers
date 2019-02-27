@@ -29,6 +29,7 @@ body{
 
 
 #welcomeView{
+
   text-align: center;
   font-size: 0.95em;
   padding: 12% 10% 0% 15%;
@@ -44,6 +45,7 @@ body{
 }
 
 #howToPlayView{
+
   font-size: 0.95em;
   text-align: left;
   padding: 12% 10% 0% 15%;
