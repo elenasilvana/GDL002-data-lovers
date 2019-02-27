@@ -129,86 +129,89 @@ function showPokemons1(){
 }
 
 
-/*function pokemonIconTemplate(pokemon){
-	return `
-	<div class="pokemon">
-		<a href="#">
-			<img src="${pokemon.img}">
-			<h2>${pokemon.name} / Num: ${pokemon.num}
-				<br>
-				<span>(Type: ${pokemon.type})</span>
-			</h2>
-			<h3>Type of candy:</h3> 
-			<p>-${pokemon.candy}</p>
-			<h3>How many candies do you need?:</h3>
-			<p>-${pokemon.candy_count}</p>
-			<h3>Egg:</h3>
-			<p>-${pokemon.egg}</p>
-			<h3>Next evolution:</h3>
-			<p>-${pokemon.next_evolution}</p>
-		</a>
-	</div>
-	`
-}*/
+
 function pokemonIconTemplate(pokemon){
-	return `
-	<div class="pokemon">
-		<div class="pokemonImage">
-		<a href="#">
+return `
+	<div class="poke-box">
+		<div class="pokemon-img">
 			<img src="${pokemon.img}">
-		</a>
 		</div>
-		<div class="pokemonDatos">
-			<h2>${pokemon.name} / Num: ${pokemon.num}
+		<div class="pokemon-name">
+		<a id="show-detail" href="#modal">
+			${pokemon.name}
+			${pokemon.num}
+			</a>
+		</div>
+		<div id= "modal" class="pokemon-detail">
+			<div class="profile-content">
+				<a class="close-x" href="#">
+				<p>x</p>
+				</a>
+				<h2>${pokemon.name}/${pokemon.num}
 				<br>
-				(Type: ${pokemon.type})
-			</h2>
+				<img src="${pokemon.img}">
+				<br>
+				(Type: ${pokemon.type})</h2>
+				<h3>Type of candy:</h3> 
+				<p>-${pokemon.candy}</p>
+				<h3>How many candies do you need?:</h3>
+				<p>-${pokemon.candy_count}</p>
+				<h3>Egg:</h3>
+				<p>-${pokemon.egg}</p>
+			</div>
 		</div>
 	</div>
 	`
 }
 
-
-function pokemonProfile (data){
+function pokemonIcon (data){
 document.getElementById("showTypes").innerHTML = `
 <h1>Pokemons (${data.length} results)</h1>
 ${data.map(pokemonIconTemplate).join("")}`
 }
 
-/* pokemonProfile (POKEMON.pokemon){
+/*function pokemonProfileTemplate(pokemon){
+	return `
+	<div id="pokemonDetail" class="profile">
+			<img src="${pokemon.img}">
+			<div class="modalContent">
+				<h2>${pokemon.name} / Num: ${pokemon.num}
+					<br>
+					<span>(Type: ${pokemon.type})</span>
+				</h2>
+				<h3>Type of candy:</h3> 
+				<p>-${pokemon.candy}</p>
+				<h3>How many candies do you need?:</h3>
+				<p>-${pokemon.candy_count}</p>
+				<h3>Egg:</h3>
+				<p>-${pokemon.egg}</p>
+				<h3>Next evolution:</h3>
+				<p>-${pokemon.next_evolution}</p>
+			</div>
+	</div>
+	`
+}
+
+function pokemonOneProfile(data){
 document.getElementById("showTypes").innerHTML = `
-<h1>Pokemons (${data.length} results)</h1>
-${data.map(pokemonIconTemplate).join("")}`
+${data.map(pokemonProfileTemplate).join("")}`
 }*/
 
-//document.getElementById("pokemons").addEventListener("click", pokemonProfile(POKEMON.pokemon));
-
-
-
-function fillElements (pokemonList, divElement){
-	for(let i=0; i<pokemonList.length; i++) {
-	let divPokemon = document.createElement("div");
-	divPokemon.className = "pokemon";
-	divPokemon.innerHTML = "<a href=\"#\"><img src=\"" +pokemonList[i].img + "\"></a>";
-	divElement.insertAdjacentElement("beforeend", divPokemon);
-	}
-}
-
+/*
 //menor a mayor
 function showPokemons(){
 	let pokemonList = POKEMON.pokemon;
 	let divPokemonList = document.getElementById('showTypes'); 
 	fillElements(pokemonList, divPokemonList);
 }
-
+*/
 
 //funcion de prueba para mostrar el tipo
 function showFilter(type){
 	let divPokemonList = document.getElementById('showTypes');
 	divPokemonList.innerHTML = "";
 	const typeResult = window.filterType(POKEMON.pokemon, type.value);
-	pokemonProfile(typeResult);
-	//fillElements(typeResult, divPokemonList);
+	pokemonIcon(typeResult);
 }
 
 
