@@ -291,11 +291,13 @@ const zToA = document.getElementById("alphabeticalInverse");
 zToA.addEventListener("click", showAlphabeticalInverse)
 
 const botonModaDescendente= document.getElementById("moda-descendente");
-botonModaDescendente.addEventListener("click", function (){console.log("hola")});
+botonModaDescendente.addEventListener("click", function(){
+	 moda(POKEMON.pokemon);
+});
 
 function showText(){
 	const text = ("Este tipo de pokemon no se encuentra en la region de kanto");
-	showTypes.innerHTML= text;
+	document.getElementById("showTypes").innerHTML= text;
 }
 
 

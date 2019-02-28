@@ -81,17 +81,22 @@ const alphabeticalInverseOrder = (data) => {
 	const pokemonByName = orderByName.map((name) => data.filter(pokemon => pokemon.name === name)[0]);
 
 	return pokemonByName;
-}
+};
 
 const moda = (data) => {
 	const objModaType = {};
 	for(let i = 0; i < data.length; i++){
 		for(let j = 0; j < data[i].type.length; j++){
-
-}
-return arrType;
-}
-}
+			if(objModaType.hasOwnProperty(data[i].type[j])){
+				objModaType[data[i].type[j]]+= 1;
+			} else {
+				objModaType[data[i].type[j]] = 1;
+			}
+		}
+	}
+	console.log(objModaType);
+	return objModaType;
+};
 
 window.moda = moda;
 window.alphabeticalInverseOrder = alphabeticalInverseOrder;
