@@ -130,21 +130,26 @@ function showPokemons1(){
 
 
 function pokemonIconTemplate(pokemon){
-return `
+	return `
 	<div class="poke-box">
-		<div id="pokeImg" class="pokemon-img">
+		<div class="pokemon-img">
 			<img src="${pokemon.img}">
 		</div>
 		<div class="pokemon-name">
-		<a id="show-detail" href="#">
+		<a id="show-detail" href="#modal">
 			${pokemon.name}
 			${pokemon.num}
 			</a>
 		</div>
 	</div>
-	`;
+	`; 
+	document.getElementById("show-detail").addEventListener("click", modal);
+	document.getElementById("showTypes").innerHTML = modal;
 }
-		/*<div id= "modal" class="pokemon-detail">
+
+function modal (pokemon){
+	return`
+	<div id= "modal" class="pokemon-detail">
 			<div class="profile-content">
 				<a class="close-x" href="#">
 				<p>x</p>
@@ -161,7 +166,9 @@ return `
 				<h3>Egg:</h3>
 				<p>-${pokemon.egg}</p>
 			</div>
-		</div>*/
+		</div>
+		`;
+}
 
 function pokemonIcon (data){
 	document.getElementById("showTypes").innerHTML = `
@@ -169,7 +176,7 @@ function pokemonIcon (data){
 	${data.map(pokemonIconTemplate).join("")}`;
 }
 
-function pokemonProfileTemplate(pokemon){
+/*function pokemonProfileTemplate(pokemon){
 	return `
 	<div id="pokemonDetail" class="profile">
 			<img src="${pokemon.img}">
@@ -188,13 +195,14 @@ function pokemonProfileTemplate(pokemon){
 				<p>-${pokemon.next_evolution}</p>
 			</div>
 	</div>
-	`;
+	`
 }
 
 function pokemonOneProfile(data){
-document.getElementById("detail").innerHTML = `
-${data.map(pokemonProfileTemplate).join("")}`;
-}
+document.getElementById("showTypes").innerHTML = `
+${data.map(pokemonProfileTemplate).join("")}`
+}*/
+
 
 //funcion de prueba para mostrar el tipo
 function showFilter(type){
@@ -280,6 +288,31 @@ aToZ.addEventListener("click", showAlphabetical);
 
 const zToA = document.getElementById("alphabeticalInverse");
 zToA.addEventListener("click", showAlphabeticalInverse);
+
+function showModaResult () {
+const resultModa = moda(POKEMON.pokemon);
+const templateModa= `<di>
+<h3>Venenoso: ${resultModa.Poison}</h3>
+<h3>Agua: ${resultModa.Water}</h3>
+<h3>Normal: ${resultModa.Normal}</h3>
+<h3>Volador: ${resultModa.Flying}</h3>
+<h3>Planta: ${resultModa.Grass}</h3>
+<h3>Tierra: ${resultModa.Ground}</h3>
+<h3>Psiquico: ${resultModa.Psychic}</h3>
+<h3>Bicho: ${resultModa.Bug}</h3>
+<h3>Fuego: ${resultModa.Fire}</h3>
+<h3>Roca: ${resultModa.Rock}</h3>
+<h3>Electrico: ${resultModa.Electric}</h3>
+<h3>Lucha: ${resultModa.Fighting}</h3>
+<h3>Hielo: ${resultModa.Ice}</h3>
+<h3>Dragón: ${resultModa.Dragon}</h3>
+<h3>Fantasma: ${resultModa.Ghost}</h3>
+</div>`;
+document.getElementById("showTypes").innerHTML= templateModa;
+}
+const botonModaDescendente= document.getElementById("moda-descendente");
+botonModaDescendente.addEventListener("click", showModaResult);
+
 
 function showText(){
 	const text = ("Este tipo de pokemon no se encuentra en la region de kanto");

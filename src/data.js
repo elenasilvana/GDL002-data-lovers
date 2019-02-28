@@ -50,7 +50,7 @@ const alphabeticalOrder = (data) => {
 	const orderByName = data.map((obj) => {return obj.name;}).sort();
 	//console.log('order by name' + orderByName);
 	const pokemonByName = orderByName.map((name) => data.filter(pokemon => pokemon.name === name)[0]);
-	
+
 	return pokemonByName;
 };
 
@@ -74,9 +74,25 @@ const alphabeticalInverseOrder = (data) => {
 	return pokemonByName;
 };
 
+const moda = (data) => {
+	const objModaType = {};
+	for(let i = 0; i < data.length; i++){
+		for(let j = 0; j < data[i].type.length; j++){
+			if(objModaType.hasOwnProperty(data[i].type[j])){
+				objModaType[data[i].type[j]]+= 1;
+			} else {
+				objModaType[data[i].type[j]] = 1;
+			}
+		}
+	}
+	console.log(objModaType);
+	return objModaType;
+};
+
 window.alphabeticalInverseOrder = alphabeticalInverseOrder;
 window.alphabeticalOrder = alphabeticalOrder;
 window.filterType = filterType;
+window.moda = moda;
 
 
 /*
