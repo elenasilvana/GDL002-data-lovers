@@ -160,13 +160,13 @@ return `
 			</div>
 		</div>
 	</div>
-	`
+	`;
 }
 
 function pokemonIcon (data){
 document.getElementById("showTypes").innerHTML = `
 <h1>Pokemons (${data.length} results)</h1>
-${data.map(pokemonIconTemplate).join("")}`
+${data.map(pokemonIconTemplate).join("")}`;
 }
 
 /*function pokemonProfileTemplate(pokemon){
@@ -197,28 +197,13 @@ ${data.map(pokemonProfileTemplate).join("")}`
 }*/
 
 
-//ya no la usamos
-function fillElements (pokemonList, divElement){
-	for(let i=0; i<pokemonList.length; i++) {
-	let divPokemon = document.createElement("div");
-	divPokemon.className = "pokemon";
-	divPokemon.innerHTML = "<a href=\"#\"><img src=\"" +pokemonList[i].img + "\"></a>";
-	divElement.insertAdjacentElement("beforeend", divPokemon);
-	}
-}
-
-
-
 //funcion de prueba para mostrar el tipo
 function showFilter(type){
 	let divPokemonList = document.getElementById('showTypes');
 	divPokemonList.innerHTML = "";
 	const typeResult = window.filterType(POKEMON.pokemon, type.value);
 	pokemonIcon(typeResult);
-	pokemonProfile(typeResult);
-	console.log(typeResult)
 	return typeResult;
-	//fillElements(typeResult, divPokemonList);
 }
 
 
@@ -281,13 +266,15 @@ ice.addEventListener("click",function () {showFilter(ice);});
 function showAlphabetical () {
 	const allPokemons = POKEMON.pokemon;
 	const ordererPokemons = alphabeticalOrder(allPokemons);
-	pokemonProfile(ordererPokemons);
+	pokemonIcon(ordererPokemons);
+	console.log(ordererPokemons);
 }
 //boton Z-A
 function showAlphabeticalInverse () {
 	const allPokemons = POKEMON.pokemon;
 	const ordererPokemons = alphabeticalInverseOrder(allPokemons);
-	pokemonProfile(ordererPokemons);
+	pokemonIcon(ordererPokemons);
+	console.log(ordererPokemons); 
 }
 
 //y cómo obtengo la data que debo pasarle al boton? 
@@ -295,35 +282,9 @@ const aToZ = document.getElementById("alphabetical");
 aToZ.addEventListener("click", showAlphabetical);
 
 const zToA = document.getElementById("alphabeticalInverse");
-zToA.addEventListener("click", showAlphabeticalInverse)
+zToA.addEventListener("click", showAlphabeticalInverse);
 
 function showText(){
-	const text = ("Este tipo de pokemon no se encuentra en la region de kanto");
-	showTypes.innerHTML= text;
+	//const text = ("Este tipo de pokemon no se encuentra en la region de kanto");
+	//showTypes.innerHTML= text;
 }
-
-
-/*
-//no usar metodo directamente con la data, y hacerlo función, probar antes para comprobar
-const reversePokedex = POKEMON.pokemon;
-reversePokedex.reverse();
-
-
-const arrPokemons = POKEMON.pokemon;
-
-//arreglo de nombres ordenado
-const pokemonNames = arrPokemons.map((obj) => {return obj.name}).sort()
-
-//falta iterar nombres del arreglo con los objetos del objeto para retornar un orden alfabetico
-
-for(let i = 0; i < pokemonNames.length; i++) {
-	POKEMON.pokemon.filter(obj) =>
-}
-
-const arrOrdered = [];
-for(let i = 0; i < pokemonNames.lenght; i++ ){
-	if(POKEMON.pokemon[i].name  === pokemonNames[i])
-		arrOrdered.push(POKEMON.pokemon[i])
-
-}
-*/
