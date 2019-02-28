@@ -1,4 +1,3 @@
-//const pokemon = require ('../src/data/pokemon/pokemon.json');
 require('../src/data.js');
 const POKEMON = require('../src/data/pokemon/pokemon.json');
 const pokemonFilterOrderMock = require('../src/data/pokemon/filterorder.json');
@@ -28,21 +27,20 @@ describe('alphabeticalOrder', () => {
   });
 
   it('returns alphabeticalOrder', () => {
-    expect(window.alphabeticalOrder(POKEMON.pokemon)).toEqual(pokemonFilterOrderMock);
+    expect(window.alphabeticalOrder(POKEMON.pokemon)).toEqual(pokemonFilterMock);
   });
-
   
 });
 
 describe('alphabeticalInverseOrder', () => {
+  
   it('it should be a function', () => {
-    expect(typeof window.alphabeticalInverseOrder).toBe('function'); 
+    expect(typeof window.alphabeticalInverseOrder).toBe('function');
   });
 
-  it('returns alphabeticalOrder', () => {
+  it('returns alphabeticalInverseOrder', () => {
     expect(window.alphabeticalInverseOrder(POKEMON.pokemon)).toEqual(pokemonFilterInverseOrderMock);
-  });
-
+ 
 });
 //crear un archivo por cada json de respuesta
 

@@ -1,15 +1,26 @@
-* {
-  box-sizing: border-box;
+
+
+.body-u{
+  text-align: center;
+  min-height: 100%;
+  min-width: 100%;
+
 }
 
-body{
-  text-align: center;
-  background: #A0C2EA;
+html, body{
+  height: 100%;
+  width: 100%;
+  background: #D9BBD6;
+  background-size: cover;
+  padding: 0;
+  margin: 0;
+  top: 0;
+  left: 0;
 }
 
 .menu nav{
   width: 100%;
-  background: #9DE891;
+  background: #B48DB0;
   float: left;
   border-radius: 5px;
 }
@@ -63,9 +74,7 @@ body{
   padding: 0% 3%;
 }
 
-#showTypes{
-
-}
+#showTypes{}
 
 #button{
   list-style: none;
@@ -158,6 +167,21 @@ z-index: 100;
   margin: 0%;
   color: #ffff;
   font-size: 0.95em;
+}
+
+button{
+background: none;
+border-radius: 100%;
+border: 0;
+outline: none;
+}
+
+.xd{
+  width: 35%;
+}
+
+p{
+  line-height: 1.5em;
 }
 
 a{

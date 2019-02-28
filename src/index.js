@@ -130,7 +130,7 @@ function showPokemons1(){
 
 
 function pokemonIconTemplate(pokemon){
-return `
+	return `
 	<div class="poke-box">
 		<div class="pokemon-img">
 			<img src="${pokemon.img}">
@@ -141,7 +141,15 @@ return `
 			${pokemon.num}
 			</a>
 		</div>
-		<div id= "modal" class="pokemon-detail">
+	</div>
+	`; 
+	document.getElementById("show-detail").addEventListener("click", modal);
+	document.getElementById("showTypes").innerHTML = modal;
+}
+
+function modal (pokemon){
+	return`
+	<div id= "modal" class="pokemon-detail">
 			<div class="profile-content">
 				<a class="close-x" href="#">
 				<p>x</p>
@@ -159,8 +167,7 @@ return `
 				<p>-${pokemon.egg}</p>
 			</div>
 		</div>
-	</div>
-	`;
+		`;
 }
 
 function pokemonIcon (data){
@@ -211,8 +218,7 @@ function showFilter(type){
 //llamando funcion de prueba que muestra el tipo, aparece activada sin hacer click
 const grass = document.getElementById("typeGrass");
 grass.addEventListener("click", function () {
-	showFilter(grass);
-	});
+	showFilter(grass);});
 
 const water = document.getElementById("typeWater");
 water.addEventListener("click",function () {showFilter(water);});
@@ -267,14 +273,13 @@ function showAlphabetical () {
 	const allPokemons = POKEMON.pokemon;
 	const ordererPokemons = alphabeticalOrder(allPokemons);
 	pokemonIcon(ordererPokemons);
-	console.log(ordererPokemons);
 }
+
 //boton Z-A
 function showAlphabeticalInverse () {
 	const allPokemons = POKEMON.pokemon;
 	const ordererPokemons = alphabeticalInverseOrder(allPokemons);
 	pokemonIcon(ordererPokemons);
-	console.log(ordererPokemons); 
 }
 
 //y cómo obtengo la data que debo pasarle al boton? 
@@ -284,7 +289,34 @@ aToZ.addEventListener("click", showAlphabetical);
 const zToA = document.getElementById("alphabeticalInverse");
 zToA.addEventListener("click", showAlphabeticalInverse);
 
-function showText(){
-	//const text = ("Este tipo de pokemon no se encuentra en la region de kanto");
-	//showTypes.innerHTML= text;
+function showModaResult () {
+const resultModa = moda(POKEMON.pokemon);
+const templateModa= `<di>
+<h3>Venenoso: ${resultModa.Poison}</h3>
+<h3>Agua: ${resultModa.Water}</h3>
+<h3>Normal: ${resultModa.Normal}</h3>
+<h3>Volador: ${resultModa.Flying}</h3>
+<h3>Planta: ${resultModa.Grass}</h3>
+<h3>Tierra: ${resultModa.Ground}</h3>
+<h3>Psiquico: ${resultModa.Psychic}</h3>
+<h3>Bicho: ${resultModa.Bug}</h3>
+<h3>Fuego: ${resultModa.Fire}</h3>
+<h3>Roca: ${resultModa.Rock}</h3>
+<h3>Electrico: ${resultModa.Electric}</h3>
+<h3>Lucha: ${resultModa.Fighting}</h3>
+<h3>Hielo: ${resultModa.Ice}</h3>
+<h3>Dragón: ${resultModa.Dragon}</h3>
+<h3>Fantasma: ${resultModa.Ghost}</h3>
+</div>`;
+document.getElementById("showTypes").innerHTML= templateModa;
 }
+
+const botonModaDescendente= document.getElementById("moda-descendente");
+botonModaDescendente.addEventListener("click", showModaResult);
+
+
+function showText(){
+	const text = ("Este tipo de pokemon no se encuentra en la region de kanto");
+	document.getElementById("showTypes").innerHTML= text;
+}
+
