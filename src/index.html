@@ -6,7 +6,7 @@
     <title>Data Lovers</title>
     <link rel="stylesheet" href="style.css" />
   </head>
-  <body>
+  <body class="body-u">
 
     <div id="root"></div>
 
@@ -21,13 +21,9 @@
   </ul>
 </nav>
     </div>
-  </head>
-
-  <body>
 
     <div id="welcomeView">
       <h4>Bienvenida y la explicacion de la app</h4>
-      <sr>
       <p>Esta aplicaión es para aquellos que deseen conocer un poco sobre PokemonGo y conocer sobre pokemones.</p>
 
     </div>
@@ -64,7 +60,7 @@
       <p>Conoce los tipos</p>
       <br>
       <div id="buttonsType">
-       <!-- <nav>
+      <!--  <nav>
         <ul id="button">
           <li><a href="#" id="typeGrass" value="Grass">Planta</a></li>
           <li><a href="#" id="typeWater" value="Water">Agua</a></li>
@@ -85,7 +81,12 @@
           <li><a href="#" id="typeIce" value="Ice">Hielo</a></li>
         </ul>
       </nav>-->
-        <button type="button" class="button" id="typeGrass" value="Grass">Planta</button>
+      
+        <button type="button" class="button" id="typeGrass" value="Grass">
+          <img class="xd" src="https://i.postimg.cc/MGbrbcBS/Dark.png">
+          <br>
+          Planta
+        </button>
         <button type="button" class="button" id="typeWater" value="Water">Agua</button>
         <button type="button" class="button" id="typeGround" value="Ground">Tierra</button>
         <button type="button" class="button" id="typePsychic" value="Psychic"> Psiquico</button>
@@ -110,7 +111,8 @@
         <br>
       <div id="showTypes"></div>
 
-     <div id=pokemonProfile></div>
+      <div id="detail"></div>
+
     </div>
 
 
