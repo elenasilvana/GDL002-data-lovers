@@ -1,8 +1,7 @@
 require('../src/data.js');
 const POKEMON = require('../src/data/pokemon/pokemon.json');
-const pokemonFilterMock = require('../src/data/pokemon/filterOrder.json');
+const pokemonFilterOrderMock = require('../src/data/pokemon/filterorder.json');
 const pokemonFilterInverseOrderMock = require('../src/data/pokemon/filterInverseOrder.json');
-
 
 describe('filterType', () => {
 
@@ -15,13 +14,14 @@ describe('filterType', () => {
     });
 
   it('returns `filterType`', () => {
-    expect(window.filterType(POKEMON.pokemon, 'Dark').length).toBe(0);
+    expect(window.filterType(POKEMON.pokemon, 'Dark')).toEqual([]);
   });
 
 
 });
 
 describe('alphabeticalOrder', () => {
+
   it('it should be a function', () => {
     expect(typeof window.alphabeticalOrder).toBe('function');
   });
@@ -33,14 +33,14 @@ describe('alphabeticalOrder', () => {
 });
 
 describe('alphabeticalInverseOrder', () => {
+  
   it('it should be a function', () => {
     expect(typeof window.alphabeticalInverseOrder).toBe('function');
   });
 
   it('returns alphabeticalInverseOrder', () => {
     expect(window.alphabeticalInverseOrder(POKEMON.pokemon)).toEqual(pokemonFilterInverseOrderMock);
-  });
-  
+ 
 });
 //crear un archivo por cada json de respuesta
 
@@ -58,7 +58,7 @@ require(./elarchivo);
 const pokemon = require (../la ruta al archivo) 
 para el set de datos que elijamos se necesita agregar esa definición
 
-describe('pokemon', () => {it ('' )}
+describe('pokemon', () => {it ('')}
 
 API Application Programmin interface 
 un termino generico que se usa para amplia variedad de cosas... 

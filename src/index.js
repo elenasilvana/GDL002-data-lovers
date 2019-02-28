@@ -171,9 +171,9 @@ function modal (pokemon){
 }
 
 function pokemonIcon (data){
-	document.getElementById("showTypes").innerHTML = `
-	<h1>Pokemons (${data.length} results)</h1>
-	${data.map(pokemonIconTemplate).join("")}`;
+document.getElementById("showTypes").innerHTML = `
+<h1>Pokemons (${data.length} results)</h1>
+${data.map(pokemonIconTemplate).join("")}`;
 }
 
 /*function pokemonProfileTemplate(pokemon){
@@ -211,7 +211,6 @@ function showFilter(type){
 	const typeResult = window.filterType(POKEMON.pokemon, type.value);
 	pokemonIcon(typeResult);
 	return typeResult;
-	//fillElements(typeResult, divPokemonList);
 }
 
 
@@ -275,6 +274,7 @@ function showAlphabetical () {
 	const ordererPokemons = alphabeticalOrder(allPokemons);
 	pokemonIcon(ordererPokemons);
 }
+
 //boton Z-A
 function showAlphabeticalInverse () {
 	const allPokemons = POKEMON.pokemon;
@@ -310,6 +310,7 @@ const templateModa= `<di>
 </div>`;
 document.getElementById("showTypes").innerHTML= templateModa;
 }
+
 const botonModaDescendente= document.getElementById("moda-descendente");
 botonModaDescendente.addEventListener("click", showModaResult);
 
@@ -319,28 +320,3 @@ function showText(){
 	document.getElementById("showTypes").innerHTML= text;
 }
 
-
-/*
-//no usar metodo directamente con la data, y hacerlo función, probar antes para comprobar
-const reversePokedex = POKEMON.pokemon;
-reversePokedex.reverse();
-
-
-const arrPokemons = POKEMON.pokemon;
-
-//arreglo de nombres ordenado
-const pokemonNames = arrPokemons.map((obj) => {return obj.name}).sort()
-
-//falta iterar nombres del arreglo con los objetos del objeto para retornar un orden alfabetico
-
-for(let i = 0; i < pokemonNames.length; i++) {
-	POKEMON.pokemon.filter(obj) =>
-}
-
-const arrOrdered = [];
-for(let i = 0; i < pokemonNames.lenght; i++ ){
-	if(POKEMON.pokemon[i].name  === pokemonNames[i])
-		arrOrdered.push(POKEMON.pokemon[i])
-
-}
-*/
