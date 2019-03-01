@@ -6,7 +6,7 @@
     <title>Data Lovers</title>
     <link rel="stylesheet" href="style.css" />
   </head>
-  <body>
+  <body class="body-u">
 
     <div id="root"></div>
 
@@ -21,19 +21,21 @@
   </ul>
 </nav>
     </div>
-  </head>
-
-  <body>
 
     <div id="welcomeView">
       <h4>Bienvenida y la explicacion de la app</h4>
-      <sr>
       <p>Esta aplicaión es para aquellos que deseen conocer un poco sobre PokemonGo y conocer sobre pokemones.</p>
-
     </div>
 
     <div id="storyView">
-      <p>Para saber más</p>
+      <h4>¿Qué es Pókemon?</h4>
+      <p>Pokémon se centra en criaturas ficticias llamadas "Pokémon", que los humanos, conocidos como Entrenadores Pokémon, capturan y entrenan para luchar entre sí por el deporte. Existe todo un universo sobre estas criaturas que abarca desde videojuegos, series, películas y coleccionables.</p>
+      <h4>Historia de Pókemon (Anime).</h4>
+      <p>Ash Ketchum es un muchacho entusiasta a quien le gustan los Pokémon y las batallas. Su gran pasión por los pokémon lo ha llevado a proponerse el objetivo de convertirse en Maestro Pokémon, el más alto grado de entrenamiento Pokémon, motivo por el cual comienza un viaje en búsqueda de este título.
+      Al cumplir 10 años, Ash tiene la oportunidad de recibir su pokémon inicial por parte del Profesor Oak. Se queda domirdo y llega tarde al laboratorio, y para cuando llegó al laboratorio del profesor, todos los Pokémon iniciales (Bulbasaur, Charmander y Squirtle) ya habían sido elegidos por otros entrenadores., entonces  recibio como su Pokémon inicial un Pikachu terco al que no le gusta entrar en las Poké Balls. En su viaje por la búsqueda de ser un maestro Pokémon conoce a Misty y Brock quienes serán sus acompañantes de aventura.</p>
+
+      <p>Para conocer la línea del tiempo de Pókemon puedes ver el siguiente video.</p>
+      <iframe width="560" height="315" src="https://www.youtube.com/embed/EVfsdwlMiDQ" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
     </div>
 
     <div id="howToPlayView">
@@ -46,8 +48,10 @@
         Pokemon (“Pocket Monsters”)- Los animales del juego se llaman pokemones (icono)
         <br>
         Poké ball (pokebola) – Para capturar pokemones (icono)
+        <img src="https://i.postimg.cc/LXxCwrvQ/pokeball.png" class="imageGuide">
         <br>
         Pokeparada – Lugar en el juego al que vas obtener pokebolas y objetos (icono)
+        <img src="https://i.postimg.cc/mDLpdb3F/Pokestop.png" class="imageGuide">
         <br>
         Gimnasio – Lugar específico donde luchas contra otros equipos dentro del juego (icono)
         <br>
@@ -63,9 +67,17 @@
     <div id="pokemonsView">
       <p>Conoce los tipos</p>
       <br>
-      <div id="buttonsType">
-        <button type="button" class="button" id="typeGrass" value="Grass">Planta</button>
-        <button type="button" class="button" id="typeWater" value="Water">Agua</button>
+      <div id="buttonsType" class="icon-img">
+
+        <button type="button" class="button" id="typeGrass" value="Grass">
+          <img  src="">
+          <br>
+          Planta
+        </button>
+        <button type="button" class="button" id="typeWater" value="Water">
+          <img  src="">
+          <br>
+          Agua</button>
         <button type="button" class="button" id="typeGround" value="Ground">Tierra</button>
         <button type="button" class="button" id="typePsychic" value="Psychic"> Psiquico</button>
         <button type="button" class="button" id="typeGhost" value="Ghost">Fantasma</button>
@@ -89,7 +101,10 @@
         <br>
       <div id="showTypes"></div>
 
-     <div id=pokemonProfile></div>
+      <div id="detail"></div>
+
+     <div id="pokemonProfile"></div>
+
     </div>
 
 

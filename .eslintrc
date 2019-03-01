@@ -7,7 +7,9 @@
   },
   "extends": "eslint:recommended",
   "globals": { 
-    "filterType": false, "POKEMON": false
+    "filterType": false, "POKEMON": false,
+    "alphabeticalOrder": false,
+    "alphabeticalInverseOrder": false,
   },
   "rules": {
     "no-console": 0,

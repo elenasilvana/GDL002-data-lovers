@@ -1,12 +1,4 @@
-// esta es una función de ejemplo
-// puedes ver como agregamos la función a nuestro objeto global window
 
-//window.dataLovers = {
-
-
-	//ejemplo:  filterType(POKEMON.pokemon, 'typeGhost')
-
-	//abstracción in progress
 const filterType = (data, type) =>{
 		console.log("filterType");
 		//data: debe ser un arreglo de objetos POKEMON.pokemon
@@ -27,6 +19,7 @@ const filterType = (data, type) =>{
 
 //};
 
+window.filterType = filterType;
 //orden alfabético
 /*
 const alphabeticalOrder = (data) => {
@@ -54,15 +47,15 @@ const alphabeticalOrder = (data) => {
 
 //order by name A - Z
 const alphabeticalOrder = (data) => {
-	const orderByName = data.map((obj) => {return obj.name}).sort();
-	console.log('order by name' + orderByName);
+	const orderByName = data.map((obj) => {return obj.name;}).sort();
 	const pokemonByName = orderByName.map((name) => data.filter(pokemon => pokemon.name === name)[0]);
 
 	return pokemonByName;
 };
 
+/*
 const alphabeticalOrderExplicado = (data) => {
-	const orderByName = data.map((obj) => {return obj.name}).sort();
+	const orderByName = data.map((obj) => {return obj.name;}).sort();
 	const pokemonByName = orderByName.map((name) => {
 		return data.filter(pokemon => {
 			return pokemon.name === name;
@@ -71,17 +64,18 @@ const alphabeticalOrderExplicado = (data) => {
 
 	return pokemonByName;
 };
+*/
+
 
 //order Z - A
 const alphabeticalInverseOrder = (data) => {
-	const orderByName = data.map((obj) => {return obj.name}).sort().reverse();
-	console.log('order by name inverse ' + orderByName);
-
-
+	const orderByName = data.map((obj) => {return obj.name;}).sort().reverse();
 	const pokemonByName = orderByName.map((name) => data.filter(pokemon => pokemon.name === name)[0]);
 
 	return pokemonByName;
 };
+
+
 
 const moda = (data) => {
 	const objModaType = {};
@@ -98,10 +92,14 @@ const moda = (data) => {
 	return objModaType;
 };
 
+
+
+
 window.moda = moda;
 window.alphabeticalInverseOrder = alphabeticalInverseOrder;
 window.alphabeticalOrder = alphabeticalOrder;
 window.filterType = filterType;
+window.moda = moda;
 
 
 
