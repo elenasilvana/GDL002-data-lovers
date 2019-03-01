@@ -291,7 +291,7 @@ zToA.addEventListener("click", showAlphabeticalInverse);
 
 function showModaResult () {
 const resultModa = moda(POKEMON.pokemon);
-const templateModa= `<di>
+const templateModa= `<div>
 <h3>Venenoso: ${resultModa.Poison}</h3>
 <h3>Agua: ${resultModa.Water}</h3>
 <h3>Normal: ${resultModa.Normal}</h3>
