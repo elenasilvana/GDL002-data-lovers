@@ -143,31 +143,8 @@ function pokemonIconTemplate(pokemon){
 		</div>
 	</div>
 	`;
-	document.getElementById("show-detail").addEventListener("click", modal);
-	document.getElementById("showTypes").innerHTML = modal;
-}
-
-function modal (pokemon){
-	return`
-	<div id= "modal" class="pokemon-detail">
-			<div class="profile-content">
-				<a class="close-x" href="#">
-				<p>x</p>
-				</a>
-				<h2>${pokemon.name}/${pokemon.num}
-				<br>
-				<img src="${pokemon.img}">
-				<br>
-				(Type: ${pokemon.type})</h2>
-				<h3>Type of candy:</h3>
-				<p>-${pokemon.candy}</p>
-				<h3>How many candies do you need?:</h3>
-				<p>-${pokemon.candy_count}</p>
-				<h3>Egg:</h3>
-				<p>-${pokemon.egg}</p>
-			</div>
-		</div>
-		`;
+	//document.getElementById("show-detail").addEventListener("click", modal);
+	//document.getElementById("showTypes").innerHTML = modal;
 }
 
 function pokemonIcon (data){
@@ -176,32 +153,6 @@ document.getElementById("showTypes").innerHTML = `
 ${data.map(pokemonIconTemplate).join("")}`;
 }
 
-/*function pokemonProfileTemplate(pokemon){
-	return `
-	<div id="pokemonDetail" class="profile">
-			<img src="${pokemon.img}">
-			<div class="modalContent">
-				<h2>${pokemon.name} / Num: ${pokemon.num}
-					<br>
-					<span>(Type: ${pokemon.type})</span>
-				</h2>
-				<h3>Type of candy:</h3>
-				<p>-${pokemon.candy}</p>
-				<h3>How many candies do you need?:</h3>
-				<p>-${pokemon.candy_count}</p>
-				<h3>Egg:</h3>
-				<p>-${pokemon.egg}</p>
-				<h3>Next evolution:</h3>
-				<p>-${pokemon.next_evolution}</p>
-			</div>
-	</div>
-	`
-}
-
-function pokemonOneProfile(data){
-document.getElementById("showTypes").innerHTML = `
-${data.map(pokemonProfileTemplate).join("")}`
-}*/
 
 
 //funcion de prueba para mostrar el tipo
@@ -289,19 +240,17 @@ aToZ.addEventListener("click", showAlphabetical);
 const zToA = document.getElementById("alphabeticalInverse");
 
 
-const botonModaDescendente= document.getElementById("moda-descendente");
-botonModaDescendente.addEventListener("click", function(){
-	 moda(POKEMON.pokemon);
-});
+
 
 function showText(){
 	const text = ("Este tipo de pokemon no se encuentra en la region de kanto");
 	document.getElementById("showTypes").innerHTML= text;
+}
 
 
 function showModaResult () {
 const resultModa = moda(POKEMON.pokemon);
-const templateModa= `<di>
+const templateModa= `<div>
 <h3>Venenoso: ${resultModa.Poison}</h3>
 <h3>Agua: ${resultModa.Water}</h3>
 <h3>Normal: ${resultModa.Normal}</h3>
@@ -328,5 +277,4 @@ botonModaDescendente.addEventListener("click", showModaResult);
 
 function showText(){
 	const text = ("Este tipo de pokemon no se encuentra en la region de kanto");
-	document.getElementById("showTypes").innerHTML= text;
-}
+	document.getElementById("showTypes").innerHTML= text;}

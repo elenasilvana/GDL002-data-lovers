@@ -88,7 +88,7 @@ const moda = (data) => {
 			}
 		}
 	}
-	console.log(objModaType);
+	console.log(JSON.stringify (objModaType));
 	return objModaType;
 };
 
