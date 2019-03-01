@@ -142,32 +142,9 @@ function pokemonIconTemplate(pokemon){
 			</a>
 		</div>
 	</div>
-	`; 
-	document.getElementById("show-detail").addEventListener("click", modal);
-	document.getElementById("showTypes").innerHTML = modal;
-}
-
-function modal (pokemon){
-	return`
-	<div id= "modal" class="pokemon-detail">
-			<div class="profile-content">
-				<a class="close-x" href="#">
-				<p>x</p>
-				</a>
-				<h2>${pokemon.name}/${pokemon.num}
-				<br>
-				<img src="${pokemon.img}">
-				<br>
-				(Type: ${pokemon.type})</h2>
-				<h3>Type of candy:</h3> 
-				<p>-${pokemon.candy}</p>
-				<h3>How many candies do you need?:</h3>
-				<p>-${pokemon.candy_count}</p>
-				<h3>Egg:</h3>
-				<p>-${pokemon.egg}</p>
-			</div>
-		</div>
-		`;
+	`;
+	//document.getElementById("show-detail").addEventListener("click", modal);
+	//document.getElementById("showTypes").innerHTML = modal;
 }
 
 function pokemonIcon (data){
@@ -176,32 +153,6 @@ document.getElementById("showTypes").innerHTML = `
 ${data.map(pokemonIconTemplate).join("")}`;
 }
 
-/*function pokemonProfileTemplate(pokemon){
-	return `
-	<div id="pokemonDetail" class="profile">
-			<img src="${pokemon.img}">
-			<div class="modalContent">
-				<h2>${pokemon.name} / Num: ${pokemon.num}
-					<br>
-					<span>(Type: ${pokemon.type})</span>
-				</h2>
-				<h3>Type of candy:</h3> 
-				<p>-${pokemon.candy}</p>
-				<h3>How many candies do you need?:</h3>
-				<p>-${pokemon.candy_count}</p>
-				<h3>Egg:</h3>
-				<p>-${pokemon.egg}</p>
-				<h3>Next evolution:</h3>
-				<p>-${pokemon.next_evolution}</p>
-			</div>
-	</div>
-	`
-}
-
-function pokemonOneProfile(data){
-document.getElementById("showTypes").innerHTML = `
-${data.map(pokemonProfileTemplate).join("")}`
-}*/
 
 
 //funcion de prueba para mostrar el tipo
@@ -268,7 +219,7 @@ rock.addEventListener("click",function () {showFilter(rock);});
 const ice = document.getElementById("typeIce");
 ice.addEventListener("click",function () {showFilter(ice);});
 
-//boton A-Z 
+//boton A-Z
 function showAlphabetical () {
 	const allPokemons = POKEMON.pokemon;
 	const ordererPokemons = alphabeticalOrder(allPokemons);
@@ -282,12 +233,20 @@ function showAlphabeticalInverse () {
 	pokemonIcon(ordererPokemons);
 }
 
-//y cómo obtengo la data que debo pasarle al boton? 
+//y cómo obtengo la data que debo pasarle al boton?
 const aToZ = document.getElementById("alphabetical");
 aToZ.addEventListener("click", showAlphabetical);
 
 const zToA = document.getElementById("alphabeticalInverse");
-zToA.addEventListener("click", showAlphabeticalInverse);
+
+
+
+
+function showText(){
+	const text = ("Este tipo de pokemon no se encuentra en la region de kanto");
+	document.getElementById("showTypes").innerHTML= text;
+}
+
 
 function showModaResult () {
 const resultModa = moda(POKEMON.pokemon);
@@ -309,6 +268,7 @@ const templateModa= `<div>
 <h3>Fantasma: ${resultModa.Ghost}</h3>
 </div>`;
 document.getElementById("showTypes").innerHTML= templateModa;
+
 }
 
 const botonModaDescendente= document.getElementById("moda-descendente");
@@ -317,6 +277,4 @@ botonModaDescendente.addEventListener("click", showModaResult);
 
 function showText(){
 	const text = ("Este tipo de pokemon no se encuentra en la region de kanto");
-	document.getElementById("showTypes").innerHTML= text;
-}
-
+	document.getElementById("showTypes").innerHTML= text;}
