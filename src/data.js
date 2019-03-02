@@ -1,16 +1,8 @@
-// esta es una función de ejemplo
-// puedes ver como agregamos la función a nuestro objeto global window
 
-//window.dataLovers = {
-
-
-	//ejemplo:  filterType(POKEMON.pokemon, 'typeGhost')
-
-	//abstracción in progress
 const filterType = (data, type) =>{
 		console.log("filterType");
 		//data: debe ser un arreglo de objetos POKEMON.pokemon
-		//type debe ser un string 
+		//type debe ser un string
 
 		const arrType = [];
 		for(let i = 0; i < data.length; i++){
@@ -28,48 +20,135 @@ const filterType = (data, type) =>{
 //};
 
 window.filterType = filterType;
-
+//orden alfabético
 /*
+const alphabeticalOrder = (data) => {
+	//debe ser un array con objetos
 
-//variable que representa el tipo planta
-const typeGrass = 'Grass';
+	//genera un arreglo con nombres ordenados alfabeticamente A - Z
+	const orderByName = data.map((obj) => {return obj.name}).sort();
 
-//filtrado para tipo planta
-const arrType = [];
-for(let i = 0; i < POKEMON.pokemon.length; i++){
 
-	for(let j = 0; j < POKEMON.pokemon[i].type.length; j++){
+	const arrAlphabetical = [];
+	for(let i = 0; i < orderByName.length; i++){
 
-		if(POKEMON.pokemon[i].type[j] === typeGrass) {
-			//arreglo que se llena con los pokemones de tipo
-			arrType.push(POKEMON.pokemon[i]);
-		}
-
-	}
-
-}
-*/
-/*
-function filterType (data, type) {
-
-	//data: debe ser un arreglo de objetos POKEMON.pokemon
-	//type debe ser un string 
-
-	const arrType = [];
-	for(let i = 0; i < data.length; i++){
-
-		for(let j = 0; j < data[i].type.length; j++){
-
-			if(data[i].type[j] === type) {
-				//arreglo que se llena con los pokemones de tipo
-				arrType.push(data[i]);
-				break;
+		for(let j = 0; j < data.length ; j++ ){
+			//console.log(pokemonNames[i], arrPokemons[j].name);
+			//genera un array con los objetos ordenados alfabeticamente
+			if (orderByName[i] === data[j].name){
+				arrAlphabetical.push(data[j]);
 			}
-
 		}
 
 	}
+	return arrAlphabetical
+};
+*/
 
-	return arrType;
+//order by name A - Z
+const alphabeticalOrder = (data) => {
+	const orderByName = data.map((obj) => {return obj.name;}).sort();
+	const pokemonByName = orderByName.map((name) => data.filter(pokemon => pokemon.name === name)[0]);
+
+	return pokemonByName;
+};
+
+/*
+const alphabeticalOrderExplicado = (data) => {
+	const orderByName = data.map((obj) => {return obj.name;}).sort();
+	const pokemonByName = orderByName.map((name) => {
+		return data.filter(pokemon => {
+			return pokemon.name === name;
+		})[0];
+	});
+
+	return pokemonByName;
+};
+*/
+
+
+//order Z - A
+const alphabeticalInverseOrder = (data) => {
+	const orderByName = data.map((obj) => {return obj.name;}).sort().reverse();
+	const pokemonByName = orderByName.map((name) => data.filter(pokemon => pokemon.name === name)[0]);
+
+	return pokemonByName;
+};
+
+
+
+const moda = (data) => {
+	const objModaType = {};
+	for(let i = 0; i < data.length; i++){
+		for(let j = 0; j < data[i].type.length; j++){
+			if(objModaType.hasOwnProperty(data[i].type[j])){
+				objModaType[data[i].type[j]]+= 1;
+			} else {
+				objModaType[data[i].type[j]] = 1;
+			}
+		}
+	}
+	console.log(JSON.stringify (objModaType));
+	return objModaType;
+};
+
+
+
+
+window.moda = moda;
+window.alphabeticalInverseOrder = alphabeticalInverseOrder;
+window.alphabeticalOrder = alphabeticalOrder;
+window.filterType = filterType;
+window.moda = moda;
+
+
+
+/*
+
+
+/*
+
+//función simplificada que ordena de A-Z
+
+const alphabeticalOrder = (data) => {
+	const orderByName = data.map((obj) => {return obj.name}).sort();
+	const pokemonByName = orderByName.map((name) => data.filter(pokemon => pokemon.name === name)[0]);
+
+	return pokemonByName;
+}
+
+const alphabeticalOrderExplicado = (data) => {
+	const orderByName = data.map((obj) => {return obj.name}).sort();
+	const pokemonByName = orderByName.map((name) => {
+		return data.filter(pokemon => {
+			return pokemon.name === name;
+		})[0];
+	});
+
+	return pokemonByName;
+}
+
+*/
+
+/*
+
+
+const alphabeticalOrderZtoA = (data) => {
+	//debe ser un array con objetos
+
+	//genera un arreglo con nombres ordenados alfabeticamente Z-A
+	const orderByName = data.map((obj) => {return obj.name}).sort();
+	orderByName = orderByName.reverse();
+
+
+	const arrAlphabetical = [];
+	for(let i = 0; i < orderByName.length; i++){
+
+		for(let j = 0; j < data.length ; j++ ){
+			//console.log(pokemonNames[i], arrPokemons[j].name);
+			//genera un array con los objetos ordenados alfabeticamente
+			if (orderByName[i] === data[j].name){
+				arrAlphabetical.push(data[j]);
+
 }
 */

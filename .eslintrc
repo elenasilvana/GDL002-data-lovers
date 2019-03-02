@@ -6,8 +6,11 @@
     "ecmaVersion": 6
   },
   "extends": "eslint:recommended",
-  "globals": { 
-    "filterType": false, "POKEMON": false
+  "globals": {
+    "filterType": false, "POKEMON": false,
+    "alphabeticalOrder": false,
+    "alphabeticalInverseOrder": false,
+    "moda": false,
   },
   "rules": {
     "no-console": 0,
