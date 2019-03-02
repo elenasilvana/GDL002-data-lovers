@@ -65,7 +65,6 @@ html, body{
   font-size: 1.5em;
   text-align: center;
   padding: 10% 10% 0% 10%;
-  float: left;
   display: none;
 }
 
@@ -98,9 +97,6 @@ html, body{
   padding: 0% 3%;
 }
 
-#showTypes{
-
-}
 
 #button{
   list-style: none;
@@ -189,6 +185,7 @@ html, body{
 }
 
 .toTop{
+  text-align: right;
 }
 
 /*.profile-content{
