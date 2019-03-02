@@ -29,7 +29,7 @@ const alphabeticalOrder = (data) => {
 	const orderByName = data.map((obj) => {return obj.name}).sort();
 
 
-	const arrAlphabetical = []; 
+	const arrAlphabetical = [];
 	for(let i = 0; i < orderByName.length; i++){
 
 		for(let j = 0; j < data.length ; j++ ){
@@ -48,14 +48,14 @@ const alphabeticalOrder = (data) => {
 //order by name A - Z
 const alphabeticalOrder = (data) => {
 	const orderByName = data.map((obj) => {return obj.name;}).sort();
-	//console.log('order by name' + orderByName);
 	const pokemonByName = orderByName.map((name) => data.filter(pokemon => pokemon.name === name)[0]);
 
 	return pokemonByName;
 };
 
-/*const alphabeticalOrderExplicado = (data) => {
-	const orderByName = data.map((obj) => {return obj.name}).sort();
+/*
+const alphabeticalOrderExplicado = (data) => {
+	const orderByName = data.map((obj) => {return obj.name;}).sort();
 	const pokemonByName = orderByName.map((name) => {
 		return data.filter(pokemon => {
 			return pokemon.name === name;
@@ -63,16 +63,19 @@ const alphabeticalOrder = (data) => {
 	});
 
 	return pokemonByName;
-};*/
+};
+*/
+
 
 //order Z - A
 const alphabeticalInverseOrder = (data) => {
 	const orderByName = data.map((obj) => {return obj.name;}).sort().reverse();
-	//console.log('order by name inverse ' + orderByName);
 	const pokemonByName = orderByName.map((name) => data.filter(pokemon => pokemon.name === name)[0]);
 
 	return pokemonByName;
 };
+
+
 
 const moda = (data) => {
 	const objModaType = {};
@@ -85,14 +88,19 @@ const moda = (data) => {
 			}
 		}
 	}
-	console.log(objModaType);
+	console.log(JSON.stringify (objModaType));
 	return objModaType;
 };
 
+
+
+
+window.moda = moda;
 window.alphabeticalInverseOrder = alphabeticalInverseOrder;
 window.alphabeticalOrder = alphabeticalOrder;
 window.filterType = filterType;
 window.moda = moda;
+
 
 
 /*
@@ -130,10 +138,10 @@ const alphabeticalOrderZtoA = (data) => {
 
 	//genera un arreglo con nombres ordenados alfabeticamente Z-A
 	const orderByName = data.map((obj) => {return obj.name}).sort();
-	orderByName = orderByName.reverse(); 
+	orderByName = orderByName.reverse();
 
 
-	const arrAlphabetical = []; 
+	const arrAlphabetical = [];
 	for(let i = 0; i < orderByName.length; i++){
 
 		for(let j = 0; j < data.length ; j++ ){

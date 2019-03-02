@@ -159,7 +159,6 @@ function pokemonIcon (data){
 	${data.map(pokemonIconTemplate).join("")}`;
 }
 
-
 //funcion de prueba para mostrar el tipo
 function showFilter(type){
 	let divPokemonList = document.getElementById('showTypes');
@@ -167,7 +166,6 @@ function showFilter(type){
 	const typeResult = window.filterType(POKEMON.pokemon, type.value);
 	pokemonIcon(typeResult);
 	return typeResult;
-	//fillElements(typeResult, divPokemonList);
 }
 
 
@@ -225,12 +223,13 @@ rock.addEventListener("click",function () {showFilter(rock);});
 const ice = document.getElementById("typeIce");
 ice.addEventListener("click",function () {showFilter(ice);});
 
-//boton A-Z 
+//boton A-Z
 function showAlphabetical () {
 	const allPokemons = POKEMON.pokemon;
 	const ordererPokemons = alphabeticalOrder(allPokemons);
 	pokemonIcon(ordererPokemons);
 }
+
 //boton Z-A
 function showAlphabeticalInverse () {
 	const allPokemons = POKEMON.pokemon;
@@ -238,12 +237,20 @@ function showAlphabeticalInverse () {
 	pokemonIcon(ordererPokemons);
 }
 
-//y cómo obtengo la data que debo pasarle al boton? 
+//y cómo obtengo la data que debo pasarle al boton?
 const aToZ = document.getElementById("alphabetical");
 aToZ.addEventListener("click", showAlphabetical);
 
 const zToA = document.getElementById("alphabeticalInverse");
-zToA.addEventListener("click", showAlphabeticalInverse);
+
+
+
+
+function showText(){
+	const text = ("Este tipo de pokemon no se encuentra en la region de kanto");
+	document.getElementById("showTypes").innerHTML= text;
+}
+
 
 function showModaResult () {
 const resultModa = moda(POKEMON.pokemon);
@@ -302,38 +309,13 @@ const templateModa= `
 		Acero: 0</p>
 </div>`;
 document.getElementById("showTypes").innerHTML= templateModa;
+
 }
+
 const botonModaDescendente= document.getElementById("moda-descendente");
 botonModaDescendente.addEventListener("click", showModaResult);
 
 
 function showText(){
 	const text = ("Este tipo de pokemon no se encuentra en la region de kanto");
-	document.getElementById("showTypes").innerHTML= text;
-}
-
-
-/*
-//no usar metodo directamente con la data, y hacerlo función, probar antes para comprobar
-const reversePokedex = POKEMON.pokemon;
-reversePokedex.reverse();
-
-
-const arrPokemons = POKEMON.pokemon;
-
-//arreglo de nombres ordenado
-const pokemonNames = arrPokemons.map((obj) => {return obj.name}).sort()
-
-//falta iterar nombres del arreglo con los objetos del objeto para retornar un orden alfabetico
-
-for(let i = 0; i < pokemonNames.length; i++) {
-	POKEMON.pokemon.filter(obj) =>
-}
-
-const arrOrdered = [];
-for(let i = 0; i < pokemonNames.lenght; i++ ){
-	if(POKEMON.pokemon[i].name  === pokemonNames[i])
-		arrOrdered.push(POKEMON.pokemon[i])
-
-}
-*/
+	document.getElementById("showTypes").innerHTML= text;}
