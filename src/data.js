@@ -71,7 +71,7 @@ const alphabeticalOrderExplicado = (data) => {
 const alphabeticalInverseOrder = (data) => {
 	const orderByName = data.map((obj) => {return obj.name;}).sort().reverse();
 	const pokemonByName = orderByName.map((name) => data.filter(pokemon => pokemon.name === name)[0]);
-
+	console.log(pokemonByName);
 	return pokemonByName;
 };
 
