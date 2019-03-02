@@ -128,80 +128,36 @@ function showPokemons1(){
 	}
 }
 
-
 function pokemonIconTemplate(pokemon){
 	return `
 	<div class="poke-box">
-		<div class="pokemon-img">
-			<img src="${pokemon.img}">
-		</div>
 		<div class="pokemon-name">
-		<a id="show-detail" href="#modal">
+			<img src="${pokemon.img}">
 			${pokemon.name}
-			${pokemon.num}
-			</a>
+			<br>
+			Número de PokeDex: ${pokemon.num}
+		</div>
+		<div class="detail">
+			<img src="${pokemon.img}">
+			<h2>${pokemon.name} / ${pokemon.num}
+			<br>
+			Tipo: ${pokemon.type}</h2>
+			<h3>Dulce con el que evoluciona:</h3> 
+			<p>-${pokemon.candy}.</p>
+			<h3>Caramelos que necesitas para tu siguiente Evolución:</h3>
+			<p>-${pokemon.candy_count}.</p>
+			<h3>Para encontrar un Huevo de este Pókemon debes caminar:</h3>
+			<p>-${pokemon.egg}.</p>
 		</div>
 	</div>
-	`; 
-	document.getElementById("show-detail").addEventListener("click", modal);
-	document.getElementById("showTypes").innerHTML = modal;
-}
-
-function modal (pokemon){
-	return`
-	<div id= "modal" class="pokemon-detail">
-			<div class="profile-content">
-				<a class="close-x" href="#">
-				<p>x</p>
-				</a>
-				<h2>${pokemon.name}/${pokemon.num}
-				<br>
-				<img src="${pokemon.img}">
-				<br>
-				(Type: ${pokemon.type})</h2>
-				<h3>Type of candy:</h3> 
-				<p>-${pokemon.candy}</p>
-				<h3>How many candies do you need?:</h3>
-				<p>-${pokemon.candy_count}</p>
-				<h3>Egg:</h3>
-				<p>-${pokemon.egg}</p>
-			</div>
-		</div>
-		`;
+`; 
 }
 
 function pokemonIcon (data){
 	document.getElementById("showTypes").innerHTML = `
-	<h1>Pokemons (${data.length} results)</h1>
+	<p>Pokemons (${data.length} results)</p>
 	${data.map(pokemonIconTemplate).join("")}`;
 }
-
-/*function pokemonProfileTemplate(pokemon){
-	return `
-	<div id="pokemonDetail" class="profile">
-			<img src="${pokemon.img}">
-			<div class="modalContent">
-				<h2>${pokemon.name} / Num: ${pokemon.num}
-					<br>
-					<span>(Type: ${pokemon.type})</span>
-				</h2>
-				<h3>Type of candy:</h3> 
-				<p>-${pokemon.candy}</p>
-				<h3>How many candies do you need?:</h3>
-				<p>-${pokemon.candy_count}</p>
-				<h3>Egg:</h3>
-				<p>-${pokemon.egg}</p>
-				<h3>Next evolution:</h3>
-				<p>-${pokemon.next_evolution}</p>
-			</div>
-	</div>
-	`
-}
-
-function pokemonOneProfile(data){
-document.getElementById("showTypes").innerHTML = `
-${data.map(pokemonProfileTemplate).join("")}`
-}*/
 
 
 //funcion de prueba para mostrar el tipo
@@ -291,22 +247,59 @@ zToA.addEventListener("click", showAlphabeticalInverse);
 
 function showModaResult () {
 const resultModa = moda(POKEMON.pokemon);
-const templateModa= `<di>
-<h3>Venenoso: ${resultModa.Poison}</h3>
-<h3>Agua: ${resultModa.Water}</h3>
-<h3>Normal: ${resultModa.Normal}</h3>
-<h3>Volador: ${resultModa.Flying}</h3>
-<h3>Planta: ${resultModa.Grass}</h3>
-<h3>Tierra: ${resultModa.Ground}</h3>
-<h3>Psiquico: ${resultModa.Psychic}</h3>
-<h3>Bicho: ${resultModa.Bug}</h3>
-<h3>Fuego: ${resultModa.Fire}</h3>
-<h3>Roca: ${resultModa.Rock}</h3>
-<h3>Electrico: ${resultModa.Electric}</h3>
-<h3>Lucha: ${resultModa.Fighting}</h3>
-<h3>Hielo: ${resultModa.Ice}</h3>
-<h3>Dragón: ${resultModa.Dragon}</h3>
-<h3>Fantasma: ${resultModa.Ghost}</h3>
+const templateModa= `
+<div class="moda">
+	<p><img class="icon-img" src="https://i.postimg.cc/J0KBD2WJ/poison.png">
+	<br>
+	Venenoso: ${resultModa.Poison}</p>
+	<p><img class="icon-img" src="https://i.postimg.cc/1zN6CBph/water.png">
+		<br>
+		Agua: ${resultModa.Water}</h3>
+	<p><img class="icon-img" src="https://i.postimg.cc/MT7BxGP9/normal.png">
+	<br>
+	Normal: ${resultModa.Normal}</p>
+	<p><img class="icon-img" src="https://i.postimg.cc/k4s5fRhP/flying.png">
+	<br>
+	Volador: ${resultModa.Flying}</p>
+	<p><img class="icon-img" src="https://i.postimg.cc/g0vjLTVJ/grass.png">
+		<br>
+		Planta: ${resultModa.Grass}</p>
+	<p><img class="icon-img" src="https://i.postimg.cc/2SLVr63n/ground.png">
+		<br>
+		Tierra: ${resultModa.Ground}</h3>
+	<p><img class="icon-img" src="https://i.postimg.cc/8kbv0jr5/psychic.png">
+		<br>
+		Psiquico: ${resultModa.Psychic}</p>
+	<p><img class="icon-img" src="https://i.postimg.cc/0NLGPF8y/bug.png">
+		<br>
+		Bicho: ${resultModa.Bug}</p>
+	<p><img class="icon-img" src="https://i.postimg.cc/L5s874rY/fire.png">
+		<br>
+		Fuego: ${resultModa.Fire}</p>
+	<p><img class="icon-img" src="https://i.postimg.cc/dVfrjpZj/rock.png">
+		<br>
+		Roca: ${resultModa.Rock}</p>
+	<p><img class="icon-img" src="https://i.postimg.cc/zXXhZ8nk/electric.png">
+		<br>
+		Electrico: ${resultModa.Electric}</p>
+	<p><img class="icon-img" src="https://i.postimg.cc/DzVmZTbH/fighting.png">
+		<br>
+		Lucha: ${resultModa.Fighting}</p>
+	<p><img class="icon-img" src="https://i.postimg.cc/brqtvj4p/ice.png">
+		<br>
+		Hielo: ${resultModa.Ice}</p>
+	<p><img class="icon-img" src="https://i.postimg.cc/yxr8z4Hf/dragon.png">
+		<br>
+		Dragón: ${resultModa.Dragon}</p>
+	<p><img class="icon-img" src="https://i.postimg.cc/MTqT7m5Y/ghost.png">
+		<br>
+		Fantasma: ${resultModa.Ghost}</p>
+	<p><img class="icon-img" src="https://i.postimg.cc/rpdC6M2H/dark.png">
+		<br>
+		Siniestro: 0</p>
+	<p><img class="icon-img" src="https://i.postimg.cc/cHy3V3mK/steel.png">
+		<br>
+		Acero: 0</p>
 </div>`;
 document.getElementById("showTypes").innerHTML= templateModa;
 }
