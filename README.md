@@ -91,12 +91,21 @@ Debería haber contenido descriptivo de los propósitos de la página, en la pá
 
   -Sketch
 
-[prototipo en papel](https://i.postimg.cc/CKwjRJSY/Whats-App-Image-2019-02-14-at-17-07-48.jpg)
-[2](https://i.postimg.cc/QdQQNvL0/Whats-App-Image-2019-02-14-at-17-07-49.jpg)
-[3](https://i.postimg.cc/s209b7Cr/Whats-App-Image-2019-02-14-at-17-07-49-1.jpg)
+![prototipo en papel](https://i.postimg.cc/CKwjRJSY/Whats-App-Image-2019-02-14-at-17-07-48.jpg)
+![2](https://i.postimg.cc/QdQQNvL0/Whats-App-Image-2019-02-14-at-17-07-49.jpg)
+![3](https://i.postimg.cc/s209b7Cr/Whats-App-Image-2019-02-14-at-17-07-49-1.jpg)
 
 
  -Prototipo Figma
 
+![Inicio](https://i.postimg.cc/9FhmykR6/Whats-App-Image-2019-03-01-at-09-51-54.jpg)
+![Guía](https://i.postimg.cc/g2cGT6K4/Whats-App-Image-2019-03-01-at-09-53-22.jpg)
+![Para saber más](https://i.postimg.cc/x8S2ykCv/Whats-App-Image-2019-03-01-at-09-55-30.jpg)
+![Tipos de Pokemón](https://i.postimg.cc/T2rG2c7C/Whats-App-Image-2019-03-01-at-09-54-31.jpg)
+![Filtrado por tipo](https://i.postimg.cc/Wb8vg1PZ/Whats-App-Image-2019-03-01-at-09-56-12.jpg)
+![Detalle del pokemón seleccionado](https://i.postimg.cc/rFMTDt7c/Whats-App-Image-2019-03-01-at-09-57-04.jpg)
 
- 
+-Versión Movil
+![Vista 1](https://i.postimg.cc/wjBdVY6G/Whats-App-Image-2019-03-01-at-10-02-51.jpg)
+![Detalle del pokemón](https://i.postimg.cc/zvS1dJb9/Whats-App-Image-2019-03-01-at-10-04-03.jpg)
+
