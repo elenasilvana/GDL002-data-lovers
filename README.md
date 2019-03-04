@@ -1,15 +1,4 @@
 
-
-#### Prototipo de baja fidelidad
-
-Durante tu trabajo deberás haber hecho e iterado sketches (boceto) de tu
-solución usando papel y lápiz. Te recomendamos tomar fotos de todas las
-iteraciones que realices y las subas a tu repositorio, y las menciones en tu
-`README.md`.
-
-#### Prototipo de alta fidelidad
-
-
 ## Conoce Pokemón 
 
 Una webApp para aquellos usuarios que buscan conocer Pokemon y que les motiva su interés por saber más acerca del reciente juego Pokemon Go. Conoce Pokemon fue pensado para niños entre los 7 a 12 por lo cual buscamos, haciendo uso de imágenes, íconos y descripciones breves para contarle a nuestros usuarios algunos detalles básicos acerca de Pokemón. Pero también contemplamos que la sintesis de la información, el uso de iconos y elementos que encontraremos en el juego puede resultar bastante amigable para cualquier usuario que tenga su primer encuentro con Pokemon y que desée saber acerca del juego.  
@@ -32,7 +21,7 @@ Debería haber una página principal (de inicio) con una barra de menú así:
 
 2. El usuario necesita el botón de "Pokemones" para acceder a los filtros por tipo.
 
-Debería haber una página que muestre el contenido (vista4)
+Debería haber una página que muestre el contenido [Tipos de Pokemón](https://i.postimg.cc/T2rG2c7C/Whats-App-Image-2019-03-01-at-09-54-31.jpg)
 -Se considera hecho cuando existe una pantalla en pokemón con los botones hechos aunque aún sin estilo. 
 
 3. El usuario neceesita los íconos de "tipo" para elegir los pokemons que desea ver.
