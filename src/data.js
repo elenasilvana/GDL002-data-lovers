@@ -1,5 +1,5 @@
 
-const filterType = (data, type) =>{
+const filterType = (data, type) => {
 		console.log("filterType");
 		//data: debe ser un arreglo de objetos POKEMON.pokemon
 		//type debe ser un string
@@ -15,63 +15,23 @@ const filterType = (data, type) =>{
 		}
 
 		return arrType;
-	};
-
-//};
-
-window.filterType = filterType;
-//orden alfabético
-/*
-const alphabeticalOrder = (data) => {
-	//debe ser un array con objetos
-
-	//genera un arreglo con nombres ordenados alfabeticamente A - Z
-	const orderByName = data.map((obj) => {return obj.name}).sort();
-
-
-	const arrAlphabetical = [];
-	for(let i = 0; i < orderByName.length; i++){
-
-		for(let j = 0; j < data.length ; j++ ){
-			//console.log(pokemonNames[i], arrPokemons[j].name);
-			//genera un array con los objetos ordenados alfabeticamente
-			if (orderByName[i] === data[j].name){
-				arrAlphabetical.push(data[j]);
-			}
-		}
-
-	}
-	return arrAlphabetical
 };
-*/
+
+
 
 //order by name A - Z
 const alphabeticalOrder = (data) => {
 	const orderByName = data.map((obj) => {return obj.name;}).sort();
 	const pokemonByName = orderByName.map((name) => data.filter(pokemon => pokemon.name === name)[0]);
-
 	return pokemonByName;
 };
 
-/*
-const alphabeticalOrderExplicado = (data) => {
-	const orderByName = data.map((obj) => {return obj.name;}).sort();
-	const pokemonByName = orderByName.map((name) => {
-		return data.filter(pokemon => {
-			return pokemon.name === name;
-		})[0];
-	});
-
-	return pokemonByName;
-};
-*/
 
 
 //order Z - A
 const alphabeticalInverseOrder = (data) => {
 	const orderByName = data.map((obj) => {return obj.name;}).sort().reverse();
 	const pokemonByName = orderByName.map((name) => data.filter(pokemon => pokemon.name === name)[0]);
-	console.log(pokemonByName);
 	return pokemonByName;
 };
 
@@ -94,16 +54,11 @@ const moda = (data) => {
 
 
 
-
-window.moda = moda;
 window.alphabeticalInverseOrder = alphabeticalInverseOrder;
 window.alphabeticalOrder = alphabeticalOrder;
 window.filterType = filterType;
 window.moda = moda;
 
-
-
-/*
 
 
 /*
@@ -131,7 +86,6 @@ const alphabeticalOrderExplicado = (data) => {
 */
 
 /*
-
 
 const alphabeticalOrderZtoA = (data) => {
 	//debe ser un array con objetos
