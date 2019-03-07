@@ -8,7 +8,7 @@
 }
 
 html, body{
-  font-family: 'Reenie Beanie';
+  font-family: 'Average Sans', sans-serif; 
   height: 100%;
   width: 100%;
   background: #DDCBE5;
@@ -114,6 +114,7 @@ html, body{
 
 .poke-box{
   text-align:center;
+  font-family: 'Mada', sans-serif;
   padding: 4% 5% 5% 5%;
   margin: 1% 1%;
   float: left;
@@ -166,8 +167,12 @@ html, body{
   color: #939393
 }
 
+/* 
+iconos de botón de tipo
+*/
+
 .icon-img{
-  width: 65px;
+  width: 100px;
 }
 
 .icon{
