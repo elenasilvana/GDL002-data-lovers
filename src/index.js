@@ -11,121 +11,34 @@ const viewThree =document.getElementById("howToPlayView");
 const viewFour = document.getElementById("pokemonsView");
 
 function showWelcome(){
-	if (viewOne.style.display == 'none') {
-		viewOne.style.display = 'block';
-	}
-	else {
-		viewOne.style.display = 'block';
+	viewOne.style.display = 'block';
+	viewTwo.style.display = 'none';
+	viewThree.style.display = 'none';
+	viewFour.style.display = 'none';
 
-	}
-
-	if (viewTwo.style.display == 'block') {
-		viewTwo.style.display = 'none';
-	}
-	else {
-		viewTwo.style.display = 'none';
-	}
-
-	if (viewThree.style.display == 'block') {
-		viewThree.style.display = 'none';
-	}
-	else {
-		viewThree.style.display = 'none';
-	}
-
-	if (viewFour.style.display == 'block') {
-		viewFour.style.display = 'none';
-	}
-	else {
-		viewFour.style.display = 'none';
-	}
 }
 
 function showStory(){
-	if (viewOne.style.display == 'block') {
-		viewOne.style.display = 'none';
-	}
-	else {
-		viewOne.style.display = 'none';
-
-	}
-
-	if (viewTwo.style.display == 'none') {
-		viewTwo.style.display = 'block';
-	}
-	else {
-		viewTwo.style.display = 'block';
-	}
-
-	if (viewThree.style.display == 'block') {
-		viewThree.style.display = 'none';
-	}
-	else {
-		viewThree.style.display = 'none';
-	}
-
-	if (viewFour.style.display == 'block') {
-		viewFour.style.display = 'none';
-	}
-	else {
-		viewFour.style.display = 'none';
-	}
+	viewOne.style.display = 'none'
+	viewTwo.style.display = 'block';
+	viewThree.style.display = 'none';
+	viewFour.style.display = 'none';
 }
 
 function showHowToPlay(){
-	if (viewOne.style.display == 'block') {
-		viewOne.style.display = 'none';
-	}
-	else {
-		viewOne.style.display = 'none';
-	}
-	if (viewTwo.style.display == 'block') {
-		viewTwo.style.display = 'none';
-	}
-	else {
-		viewTwo.style.display = 'none';
-	}
-	if (viewThree.style.display == 'none') {
-		viewThree.style.display = 'block';
-	}
-	else {
-		viewThree.style.display = 'block';
-	}
-	if (viewFour.style.display == 'block') {
-		viewFour.style.display = 'none';
-	}
-	else {
-		viewFour.style.display = 'none';
-
-	}
+	
+	viewOne.style.display = 'none';
+	viewTwo.style.display = 'none';
+	viewThree.style.display = 'block';
+	viewFour.style.display = 'none';
 }
 
 function showPokemons1(){
-	if (viewOne.style.display == 'block') {
-		viewOne.style.display = 'none';
-	}
-	else {
-		viewOne.style.display = 'none';
-	}
-	if (viewTwo.style.display == 'block') {
-		viewTwo.style.display = 'none';
-	}
-	else {
-		viewTwo.style.display = 'none';
-	}
-	if (viewThree.style.display == 'block') {
-		viewThree.style.display = 'none';
-	}
-	else {
-		viewThree.style.display = 'none';
-	}
-	if (viewFour.style.display == 'none') {
-		viewFour.style.display = 'block';
-	}
-	else {
-		viewFour.style.display = 'block';
+	viewOne.style.display = 'none';
+	viewTwo.style.display = 'none';
+	viewThree.style.display = 'none';
+	viewFour.style.display = 'block';
 
-	}
 }
 
 function pokemonIconTemplate(pokemon){
@@ -133,9 +46,7 @@ function pokemonIconTemplate(pokemon){
 	<div class="poke-box">
 		<div class="pokemon-name">
 			<img src="${pokemon.img}">
-			${pokemon.name}
-			<br>
-			Número de PokeDex: ${pokemon.num}
+			${pokemon.name.toUpperCase()}
 		</div>
 		<div class="detail">
 			<img src="${pokemon.img}">
@@ -144,9 +55,9 @@ function pokemonIconTemplate(pokemon){
 			Tipo: ${pokemon.type}</h2>
 			<h3>Dulce con el que evoluciona:</h3> 
 			<p>-${pokemon.candy}.</p>
-			<h3>Caramelos que necesitas para tu siguiente Evolución:</h3>
+			<h3>Caramelos que necesitas para su siguiente Evolución:</h3>
 			<p>-${pokemon.candy_count}.</p>
-			<h3>Para encontrar un Huevo de este Pókemon debes caminar:</h3>
+			<h3>${pokemon.name} aparece en huevos de:</h3>
 			<p>-${pokemon.egg}.</p>
 		</div>
 	</div>
@@ -155,7 +66,7 @@ function pokemonIconTemplate(pokemon){
 
 function pokemonIcon (data){
 	document.getElementById("showTypes").innerHTML = `
-	<p>Pokemons (${data.length} results)</p>
+	<p>Conoce los pokemones de tipo: (${data.length} resultados)</p>
 	${data.map(pokemonIconTemplate).join("")}`;
 }
 
@@ -164,13 +75,32 @@ function showFilter(type){
 	let divPokemonList = document.getElementById('showTypes');
 	divPokemonList.innerHTML = "";
 	const typeResult = window.filterType(POKEMON.pokemon, type.value);
-	pokemonIcon(typeResult);
+	//console.log(typeResult);
+	if (typeResult == []) {
+		divPokemonList.innerHTML= "No se encuentran Pokemones de este tipo en la primera generación";
+	}
+	else {
+	pokemonIcon(typeResult);	
+	}
 	return typeResult;
 }
 
 
 //funciones que muestran el tipo
 //llamando funcion de prueba que muestra el tipo, aparece activada sin hacer click
+/*
+
+Se puede refactorizar el codigo de los botones
+llamar del dom x clase
+array.from
+iterar
+event.target
+
+se llamaban las clases, se generaba un arreglo con esas clases
+
+*/ 
+
+
 const grass = document.getElementById("typeGrass");
 grass.addEventListener("click", function () {
 	showFilter(grass);});
@@ -188,7 +118,7 @@ const ghost = document.getElementById("typeGhost");
 ghost.addEventListener("click",function () {showFilter(ghost);});
 
 const dark = document.getElementById("typeDark");
-dark.addEventListener("click",function () {showFilter(dark); showText();});
+dark.addEventListener("click",function () {showFilter(dark);});
 
 const poison = document.getElementById("typePoison");
 poison.addEventListener("click",function () {showFilter(poison);});
@@ -197,7 +127,7 @@ const fighting = document.getElementById("typeFighting");
 fighting.addEventListener("click",function () {showFilter(fighting);});
 
 const steel = document.getElementById("typeSteel");
-steel.addEventListener("click",function () {showFilter(steel); showText();});
+steel.addEventListener("click",function () {showFilter(steel);});
 
 const bug = document.getElementById("typeBug");
 bug.addEventListener("click",function () {showFilter(bug);});
@@ -223,6 +153,15 @@ rock.addEventListener("click",function () {showFilter(rock);});
 const ice = document.getElementById("typeIce");
 ice.addEventListener("click",function () {showFilter(ice);});
 
+let alphabeticalSwitch = document.getElementById("alphabetical-Switch");
+alphabeticalSwitch.addEventListener('change', function() {
+		if (alphabeticalSwitch.checked){
+			showAlphabetical();
+		}
+		else {
+			showAlphabeticalInverse();
+		};});
+
 //boton A-Z
 function showAlphabetical () {
 	const allPokemons = POKEMON.pokemon;
@@ -234,6 +173,7 @@ function showAlphabetical () {
 function showAlphabeticalInverse () {
 	const allPokemons = POKEMON.pokemon;
 	const ordererPokemons = alphabeticalInverseOrder(allPokemons);
+	console.log(ordererPokemons);
 	pokemonIcon(ordererPokemons);
 }
 
@@ -243,14 +183,6 @@ aToZ.addEventListener("click", showAlphabetical);
 
 const zToA = document.getElementById("alphabeticalInverse");
 zToA.addEventListener("click", showAlphabeticalInverse);
-
-
-
-
-function showText(){
-	const text = ("Este tipo de pokemon no se encuentra en la region de kanto");
-	document.getElementById("showTypes").innerHTML= text;
-}
 
 
 function showModaResult () {
