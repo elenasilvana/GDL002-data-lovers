@@ -11,59 +11,32 @@ const viewThree =document.getElementById("howToPlayView");
 const viewFour = document.getElementById("pokemonsView");
 
 function showWelcome(){
-	viewOne.style.display = 'none';
 	viewOne.style.display = 'block';
-
-	viewTwo.style.display = 'block';
 	viewTwo.style.display = 'none';
-
-	viewThree.style.display = 'block';
 	viewThree.style.display = 'none';
-
-	viewFour.style.display = 'block'
 	viewFour.style.display = 'none';
+
 }
 
 function showStory(){
-	viewOne.style.display = 'block';
 	viewOne.style.display = 'none'
-
-	viewTwo.style.display = 'none';
 	viewTwo.style.display = 'block';
-
-	viewThree.style.display == 'block';
 	viewThree.style.display = 'none';
-
-	viewFour.style.display == 'block';
 	viewFour.style.display = 'none';
 }
 
 function showHowToPlay(){
 	
-	viewOne.style.display = 'block';
 	viewOne.style.display = 'none';
-
-	viewTwo.style.display = 'block';
 	viewTwo.style.display = 'none';
-
-	viewThree.style.display = 'none';
 	viewThree.style.display = 'block';
-
-	viewFour.style.display = 'block';
 	viewFour.style.display = 'none';
 }
 
 function showPokemons1(){
-	viewOne.style.display = 'block';
 	viewOne.style.display = 'none';
-
-	viewTwo.style.display = 'block';
 	viewTwo.style.display = 'none';
-
-	viewThree.style.display = 'block';
 	viewThree.style.display = 'none';
-
-	viewFour.style.display = 'none';
 	viewFour.style.display = 'block';
 
 }
@@ -102,7 +75,13 @@ function showFilter(type){
 	let divPokemonList = document.getElementById('showTypes');
 	divPokemonList.innerHTML = "";
 	const typeResult = window.filterType(POKEMON.pokemon, type.value);
-	pokemonIcon(typeResult);
+	//console.log(typeResult);
+	if (typeResult == []) {
+		divPokemonList.innerHTML= "No se encuentran Pokemones de este tipo en la primera generación";
+	}
+	else {
+	pokemonIcon(typeResult);	
+	}
 	return typeResult;
 }
 
@@ -139,7 +118,7 @@ const ghost = document.getElementById("typeGhost");
 ghost.addEventListener("click",function () {showFilter(ghost);});
 
 const dark = document.getElementById("typeDark");
-dark.addEventListener("click",function () {showFilter(dark); showText();});
+dark.addEventListener("click",function () {showFilter(dark);});
 
 const poison = document.getElementById("typePoison");
 poison.addEventListener("click",function () {showFilter(poison);});
@@ -148,7 +127,7 @@ const fighting = document.getElementById("typeFighting");
 fighting.addEventListener("click",function () {showFilter(fighting);});
 
 const steel = document.getElementById("typeSteel");
-steel.addEventListener("click",function () {showFilter(steel); showText();});
+steel.addEventListener("click",function () {showFilter(steel);});
 
 const bug = document.getElementById("typeBug");
 bug.addEventListener("click",function () {showFilter(bug);});
@@ -174,6 +153,15 @@ rock.addEventListener("click",function () {showFilter(rock);});
 const ice = document.getElementById("typeIce");
 ice.addEventListener("click",function () {showFilter(ice);});
 
+let alphabeticalSwitch = document.getElementById("alphabetical-Switch");
+alphabeticalSwitch.addEventListener('change', function() {
+		if (alphabeticalSwitch.checked){
+			showAlphabetical();
+		}
+		else {
+			showAlphabeticalInverse();
+		};});
+
 //boton A-Z
 function showAlphabetical () {
 	const allPokemons = POKEMON.pokemon;
@@ -195,14 +183,6 @@ aToZ.addEventListener("click", showAlphabetical);
 
 const zToA = document.getElementById("alphabeticalInverse");
 zToA.addEventListener("click", showAlphabeticalInverse);
-
-
-
-
-function showText(){
-	const text = ("Este tipo de pokemon no se encuentra en la region de kanto");
-	document.getElementById("showTypes").innerHTML= text;
-}
 
 
 function showModaResult () {
