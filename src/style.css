@@ -72,8 +72,8 @@ html, body{
 }
 
 .menu nav{
+background: transparent;
   width: 100%;
-  background: #3BC458;
   float: left;
   border-radius: 5px;
 }
@@ -86,17 +86,20 @@ html, body{
 }
 .menu li a{
   font-size: 2em;
-  color: #fff;
+  color: purple;
   text-decoration: none;
   display: block;
   padding: 20px;
 }
 
 #welcomeView{
+  background: #F7F8F8;  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to top, #ACBB78, #F7F8F8);  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to top, #ACBB78, #F7F8F8); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  
   font-size: 1.5em;
   text-align: center;
   padding: 12% 10% 0% 15%;
-  background: #37CCDB;
   display: block;
 }
 
@@ -116,26 +119,16 @@ html, body{
 }
 
 #howToPlayView{
+  background: #ECE9E6;  /* fallback for old browsers */
+background: -webkit-linear-gradient(to right, #FFFFFF, #ECE9E6);  /* Chrome 10-25, Safari 5.1-6 */
+background: linear-gradient(to right, #FFFFFF, #ECE9E6); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
   font-size: 1.5em;
   text-align: center;
-  padding: 10% 10% 0% 10%;
-  background: #D17854;
   display: none;
 }
 
-#howToPlayView div{
-  float: left;
-  text-align:center;
-  margin: 3% 3%;
-}
 
-#howToPlayView h4{
-  font-size: 1.9em;
-}
-
-
-.pokemon-go{
-}
 
 #pokemonsView{
   text-align: center;
@@ -151,9 +144,7 @@ html, body{
   font-size: 1.5em;
 }
 
-#buttonsType{
-  padding: 0% 3%;
-}
+
 
 
 #button{
@@ -230,12 +221,11 @@ iconos de botón de tipo
 */
 
 .icon-img{
-  width: 300px;
+  width: 170px;
+  padding: 1em;
 }
 
-.icon{
-  width: 350px;
-}
+
 
 .detail p{
   font-size: 0.75em;
@@ -250,6 +240,8 @@ iconos de botón de tipo
 .toTop{
   text-align: right;
 }
+
+
 
 /*.profile-content{
   background-color: #D6C2C2;
@@ -284,10 +276,8 @@ z-index: 100;
 }*/
 
 button{
-  font-family: 'Reenie Beanie';
-  font-size: 0.95em;
   background: none;
-  border-radius: 100%;
+  border-radius: 10%;
   border: 0;
   outline: none;
 }
@@ -306,7 +296,7 @@ a{
 }
 
 a:visited{
-  color: #939393;
+  color: orange;
 }
 
 h1{
@@ -340,4 +330,40 @@ h3{
   top:0%;
   max-width: 100%;
 
+}
+
+.guide-introduction{
+  width: 80%;
+  margin: 0 auto;
+}
+
+.glosary-img{
+  width: 250px;
+  height: 250px;
+}
+
+.glosary-content{
+  display:flex;
+  flex-direction: column;
+  
+}
+
+.div-row{
+  height: 60vh;
+}
+
+.glosary-right{
+  float: left;
+  width: 60%;
+  display:flex;
+  justify-content: center;
+  align-content: center;
+}
+
+.glosary-left{
+  float:left;
+  width: 40%;
+  display:flex;
+  justify-content: center;
+  align-content: center;
 }

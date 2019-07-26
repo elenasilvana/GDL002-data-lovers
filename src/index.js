@@ -6,7 +6,7 @@ document.getElementById("howToPlay").addEventListener("click", showHowToPlay);
 document.getElementById("pokemons").addEventListener("click", showPokemons1);
 
 const viewOne = document.getElementById("welcomeView");
-const viewTwo = document.getElementById("storyView");
+const viewTwo =document.getElementById("storyView");
 const viewThree =document.getElementById("howToPlayView");
 const viewFour = document.getElementById("pokemonsView");
 
@@ -39,6 +39,10 @@ function showPokemons1(){
 	viewThree.style.display = 'none';
 	viewFour.style.display = 'block';
 
+}
+
+function goTop(){
+	window.scrollTo(0,0);
 }
 
 function pokemonIconTemplate(pokemon){
