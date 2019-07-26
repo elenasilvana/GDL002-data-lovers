@@ -74,84 +74,24 @@ function pokemonIcon (data){
 function showFilter(type){
 	let divPokemonList = document.getElementById('showTypes');
 	divPokemonList.innerHTML = "";
-	const typeResult = window.filterType(POKEMON.pokemon, type.value);
-	//console.log(typeResult);
-	if (typeResult == []) {
-		divPokemonList.innerHTML= "No se encuentran Pokemones de este tipo en la primera generación";
+	const typeResult = window.filterType(POKEMON.pokemon, type);
+	console.log(typeResult);
+	const mesage = "No se encuentran Pokemones de este tipo en la primera generación";
+	if(typeResult.length === 0) {
+		divPokemonList.innerHTML = mesage;
 	}
 	else {
 	pokemonIcon(typeResult);	
 	}
-	return typeResult;
+	//return typeResult;
 }
+ 
 
+const buttonsType = document.querySelectorAll('.btn-type');
 
-//funciones que muestran el tipo
-//llamando funcion de prueba que muestra el tipo, aparece activada sin hacer click
-/*
-
-Se puede refactorizar el codigo de los botones
-llamar del dom x clase
-array.from
-iterar
-event.target
-
-se llamaban las clases, se generaba un arreglo con esas clases
-
-*/ 
-
-
-const grass = document.getElementById("typeGrass");
-grass.addEventListener("click", function () {
-	showFilter(grass);});
-
-const water = document.getElementById("typeWater");
-water.addEventListener("click",function () {showFilter(water);});
-
-const ground = document.getElementById("typeGround");
-ground.addEventListener("click",function () {showFilter(ground);});
-
-const psychic = document.getElementById("typePsychic");
-psychic.addEventListener("click",function () {showFilter(psychic);});
-
-const ghost = document.getElementById("typeGhost");
-ghost.addEventListener("click",function () {showFilter(ghost);});
-
-const dark = document.getElementById("typeDark");
-dark.addEventListener("click",function () {showFilter(dark);});
-
-const poison = document.getElementById("typePoison");
-poison.addEventListener("click",function () {showFilter(poison);});
-
-const fighting = document.getElementById("typeFighting");
-fighting.addEventListener("click",function () {showFilter(fighting);});
-
-const steel = document.getElementById("typeSteel");
-steel.addEventListener("click",function () {showFilter(steel);});
-
-const bug = document.getElementById("typeBug");
-bug.addEventListener("click",function () {showFilter(bug);});
-
-const fire = document.getElementById("typeFire");
-fire.addEventListener("click",function () {showFilter(fire);});
-
-const dragon = document.getElementById("typeDragon");
-dragon.addEventListener("click",function () {showFilter(dragon);});
-
-const flying = document.getElementById("typeFlying");
-flying.addEventListener("click",function () {showFilter(flying);});
-
-const normal = document.getElementById("typeNormal");
-normal.addEventListener("click",function () {showFilter(normal);});
-
-const electric = document.getElementById("typeElectric");
-electric.addEventListener("click",function () {showFilter(electric);});
-
-const rock = document.getElementById("typeRock");
-rock.addEventListener("click",function () {showFilter(rock);});
-
-const ice = document.getElementById("typeIce");
-ice.addEventListener("click",function () {showFilter(ice);});
+buttonsType.forEach((button)=>{
+	button.addEventListener('click', (e)=>{showFilter(e.target.value)});
+})
 
 let alphabeticalSwitch = document.getElementById("alphabetical-Switch");
 alphabeticalSwitch.addEventListener('change', function() {
@@ -245,5 +185,5 @@ document.getElementById("showTypes").innerHTML= templateModa;
 
 }
 
-const botonModaDescendente= document.getElementById("moda-descendente");
+const botonModaDescendente = document.getElementById("moda-descendente");
 botonModaDescendente.addEventListener("click", showModaResult);
