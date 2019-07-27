@@ -1,20 +1,14 @@
 
-//elementos del nav
-document.getElementById("welcome").addEventListener("click", screenOne);
-document.getElementById("story").addEventListener("click", screenTwo);
-document.getElementById("howToPlay").addEventListener("click", screenThree);
-document.getElementById("pokemons").addEventListener("click", screenFour);
+const menuOption = document.querySelectorAll('.menu a');
+console.log(menuOption);
 
-//div correspondiente
-//const viewOne = document.getElementById("welcomeView");
-const viewTwo =document.getElementById("storyView");
-const viewThree =document.getElementById("howToPlayView");
-//const viewFour = document.getElementById("pokemonsView");
 
 //select by class
 const one = document.getElementsByClassName('view-one')[0];
+const two = document.getElementsByClassName('view-two')[0];
+const three = document.getElementsByClassName('view-three')[0];
 const four= document.getElementsByClassName('view-four')[0];
-console.log('aqui four', four )
+console.log('aqui two', two )
 
 function pokepoke(){
 	four.style.display = 'block';
@@ -23,35 +17,44 @@ function pokepoke(){
 function screenOne(){
 	//debugger;
 	one.style.display = 'block';
-	viewTwo.style.display = 'none';
-	viewThree.style.display = 'none';
+	two.style.display = 'none';
+	three.style.display = 'none';
 	four.style.display = 'none';
 
 }
 
 function screenTwo(){
 	one.style.display = 'none'
-	viewTwo.style.display = 'block';
-	viewThree.style.display = 'none';
-	viewFour.style.display = 'none';
+	two.style.display = 'block';
+	three.style.display = 'none';
+	four.style.display = 'none';
 }
 
 function screenThree(){
 	//debugger;
 	one.style.display = 'none';
-	viewTwo.style.display = 'none';
-	viewThree.style.display = 'block';
+	two.style.display = 'none';
+	three.style.display = 'block';
 	four.style.display = 'none';
 }
 
 function screenFour(){
 	one.style.display = 'none';
-	viewTwo.style.display = 'none';
-	viewThree.style.display = 'none';
+	two.style.display = 'none';
+	three.style.display = 'none';
 	four.style.display = 'block';
 	//debugger;
 
 }
+
+function menuSelection(e){
+	const selectedScreen = `screen${e.target.id}`;
+	window[selectedScreen]();
+}
+
+menuOption.forEach((element)=>{
+	element.addEventListener('click', menuSelection);
+})
 
 function goTop(){
 	window.scrollTo(0,0);
@@ -80,26 +83,27 @@ function pokemonIconTemplate(pokemon){
 `; 
 }
 
-function pokemonIcon (data){
-	document.getElementById("showTypes").innerHTML = `
-	<p>Conoce los pokemones de tipo: (${data.length} resultados)</p>
+function pokemonIcon (data, message){
+	const pokemonresult = document.getElementsByClassName('show-pokemons-result')[0];
+	pokemonresult.innerHTML = `<h3> ${message} <h3>
 	${data.map(pokemonIconTemplate).join("")}`;
 }
 
 //funcion de prueba para mostrar el tipo
 function showFilter(type){
-	let divPokemonList = document.getElementById('showTypes');
-	divPokemonList.innerHTML = "";
+	const pokemonresult = document.getElementsByClassName('show-pokemons-result')[0];
+	pokemonresult.innerHTML = "";
 	const typeResult = window.filterType(POKEMON.pokemon, type);
 	console.log(typeResult);
-	const mesage = "No se encuentran Pokemones de este tipo en la primera generación";
+	let mesage;
 	if(typeResult.length === 0) {
-		divPokemonList.innerHTML = mesage;
+		message= `No se encontraron Pokemones de tipo ${type} en la primera generación`;
+		pokemonresult.innerHTML = mesage;
 	}
 	else {
-	pokemonIcon(typeResult);	
+		message = `Conoce los pokemones de tipo ${type} (${typeResult.length} resultados)`;
+	pokemonIcon(typeResult, message);	
 	}
-	//return typeResult;
 }
  
 
@@ -109,7 +113,7 @@ buttonsType.forEach((button)=>{
 	button.addEventListener('click', (e)=>{showFilter(e.target.value)});
 })
 
-/*
+
 let alphabeticalSwitch = document.getElementById("alphabetical-Switch");
 alphabeticalSwitch.addEventListener('change', function() {
 		if (alphabeticalSwitch.checked){
@@ -118,7 +122,7 @@ alphabeticalSwitch.addEventListener('change', function() {
 		else {
 			showAlphabeticalInverse();
 		};});
-*/
+
 //boton A-Z
 function showAlphabetical () {
 	const allPokemons = POKEMON.pokemon;
@@ -198,7 +202,8 @@ const templateModa= `
 		<br>
 		Acero: 0</p>
 </div>`;
-document.getElementById("showTypes").innerHTML= templateModa;
+const pokemonresult = document.getElementsByClassName('show-pokemons-result')[0];
+pokemonresult.innerHTML= templateModa;
 
 }
 

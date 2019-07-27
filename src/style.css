@@ -102,6 +102,9 @@ background: transparent;
   text-align: center;
   padding: 12% 10% 0% 15%;
   display: block;
+  #welcomeView h4{
+    font-size: 2em;
+  }
 }*/
 
 .view-one{
@@ -115,10 +118,7 @@ background: transparent;
   display: block;
 }
 
-#welcomeView h4{
-  font-size: 2em;
-}
-
+/*
 #storyView{
   font-size: 1.5em;
   padding: 10%;
@@ -128,20 +128,42 @@ background: transparent;
 
 #storyView img{
   width: 40%;
+}*/
+
+.view-two{
+  font-size: 1.5em;
+  padding: 10%;
+  background: #0897CC;
+  display: none;
 }
 
+.view-two img{
+  width: 40%;
+}
+/*
+
 #howToPlayView{
-  background: #ECE9E6;  /* fallback for old browsers */
-background: -webkit-linear-gradient(to right, #FFFFFF, #ECE9E6);  /* Chrome 10-25, Safari 5.1-6 */
-background: linear-gradient(to right, #FFFFFF, #ECE9E6); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  background: #ECE9E6;  
+background: -webkit-linear-gradient(to right, #FFFFFF, #ECE9E6); 
+background: linear-gradient(to right, #FFFFFF, #ECE9E6); 
 
   font-size: 1.5em;
   text-align: center;
   display: none;
+}*/
+
+.view-three{
+  background: #ECE9E6;  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to right, #FFFFFF, #ECE9E6);  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to right, #FFFFFF, #ECE9E6); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  
+    font-size: 1.5em;
+    text-align: center;
+    display: none;
 }
 
 
-
+/*
 #pokemonsView{
   text-align: center;
   font-size: 1.95em;
@@ -151,11 +173,16 @@ background: linear-gradient(to right, #FFFFFF, #ECE9E6); /* W3C, IE 10+/ Edge, F
   display: none;
   padding: 8% 8% 8% 8%;
 }
-
+*/
 .view-four{
   display:none;
   padding: 12% 10% 0% 15%;
 
+}
+
+.show-pokemons-result{
+  color: red;
+  width: 100vh;
 }
 
 #pokemonsView > p{
@@ -197,6 +224,7 @@ background: linear-gradient(to right, #FFFFFF, #ECE9E6); /* W3C, IE 10+/ Edge, F
 }
 
 .pokemon-name{
+  margin: 0 auto;
   padding: 100%;
   width: 100%;
   height: 100%;

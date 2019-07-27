@@ -18,17 +18,17 @@
     <div class="menu">
       <nav>
         <ul id="main">
-          <li><a id="welcome" href="#">Inicio</a></li>
-          <li><a id="story" href="#">Para saber más</a></li>
-          <li><a id="howToPlay" href="#">Guía</a></li>
-          <li><a id="pokemons" href="#">Pokemones</a></li>
+          <li><a value="One" id="One" href="#">Inicio</a></li>
+          <li><a value="Two" id="Two" href="#">Para saber más</a></li>
+          <li><a value="Three" id="Three" href="#">Guía</a></li>
+          <li><a value="Four" id="Four" href="#">Pokemones</a></li>
           <div id="marker"></div>
         </ul>
       </nav>
     </div>
 
 
-    <div id="welcomeView">
+    
       <container class="view-one">
         
         <h4>¡Bienvenido a Conoce Pokemon!</h4>
@@ -46,36 +46,38 @@
       </container>
 
 
-    </div>
 
-    <div id="storyView">
-      <h4>¿Qué es Pókemon?</h4>
-      <img src="https://i.postimg.cc/DzcVT6xq/Logo-de-Pok-mon.png" alt="Pokemon logo">
-      <p>Pokémon se centra en criaturas ficticias llamadas "Pokémon", que los humanos, conocidos como Entrenadores
-        Pokémon, capturan y entrenan para luchar entre sí por el deporte. Existe todo un universo sobre estas criaturas
-        que abarca desde videojuegos, series, películas y coleccionables.</p>
-      <h4>Historia de Pókemon (Anime).</h4>
-      <img src="https://i.postimg.cc/PfVjJ6Ty/anime.png" alt="img Pokemón anime">
-      <p>Ash Ketchum es un muchacho entusiasta a quien le gustan los Pokémon y las batallas. Su gran pasión por los
-        pokémon lo ha llevado a proponerse el objetivo de convertirse en Maestro Pokémon, el más alto grado de
-        entrenamiento Pokémon, motivo por el cual comienza un viaje en búsqueda de este título.
-        Al cumplir 10 años, Ash tiene la oportunidad de recibir su pokémon inicial por parte del Profesor Oak. Se queda
-        domirdo y llega tarde al laboratorio, y para cuando llegó al laboratorio del profesor, todos los Pokémon
-        iniciales
-        (Bulbasaur, Charmander y Squirtle) ya habían sido elegidos por otros entrenadores., entonces recibio como su
-        Pokémon inicial un Pikachu terco al que no le gusta entrar en las Poké Balls. En su viaje por la búsqueda de ser
-        un maestro Pokémon conoce a Misty y Brock quienes serán sus acompañantes de aventura.</p>
 
-      <p>Para conocer la línea del tiempo de Pókemon puedes ver el siguiente video.</p>
+      <container class="view-two">
 
-      <a href="https://www.youtube.com/embed/EVfsdwlMiDQ">La historia de Pokemon</a>
+        <h4>¿Qué es Pókemon?</h4>
+        <img src="https://i.postimg.cc/DzcVT6xq/Logo-de-Pok-mon.png" alt="Pokemon logo">
+        <p>Pokémon se centra en criaturas ficticias llamadas "Pokémon", que los humanos, conocidos como Entrenadores
+          Pokémon, capturan y entrenan para luchar entre sí por el deporte. Existe todo un universo sobre estas criaturas
+          que abarca desde videojuegos, series, películas y coleccionables.</p>
+        <h4>Historia de Pókemon (Anime).</h4>
+        <img src="https://i.postimg.cc/PfVjJ6Ty/anime.png" alt="img Pokemón anime">
+        <p>Ash Ketchum es un muchacho entusiasta a quien le gustan los Pokémon y las batallas. Su gran pasión por los
+          pokémon lo ha llevado a proponerse el objetivo de convertirse en Maestro Pokémon, el más alto grado de
+          entrenamiento Pokémon, motivo por el cual comienza un viaje en búsqueda de este título.
+          Al cumplir 10 años, Ash tiene la oportunidad de recibir su pokémon inicial por parte del Profesor Oak. Se queda
+          domirdo y llega tarde al laboratorio, y para cuando llegó al laboratorio del profesor, todos los Pokémon
+          iniciales
+          (Bulbasaur, Charmander y Squirtle) ya habían sido elegidos por otros entrenadores., entonces recibio como su
+          Pokémon inicial un Pikachu terco al que no le gusta entrar en las Poké Balls. En su viaje por la búsqueda de ser
+          un maestro Pokémon conoce a Misty y Brock quienes serán sus acompañantes de aventura.</p>
+  
+        <p>Para conocer la línea del tiempo de Pókemon puedes ver el siguiente video.</p>
+  
+        <a href="https://www.youtube.com/embed/EVfsdwlMiDQ">La historia de Pokemon</a>
 
-    </div>
+      </container>
+
+  
 
 
     <container class="view-four">
-        <h3>hola mundo pokemon</h3>
-        <p>Conoce los tipos</p>
+        <p>Presiona el icono del tipo de pokemón que deseas conocer :)</p>
         <div class="buttons-type">
   
           <button type="button" class="button btn-type" value="Grass">
@@ -105,7 +107,7 @@
           <button type="button" class="button btn-type" value="Steel">
             <img class="icon-img" src="https://i.postimg.cc/cHy3V3mK/steel.png" alt="button-Steel">
           </button>
-          <button type="button" class="button" value="Bug">
+          <button type="button" class="button btn-type" value="Bug">
             <img class="icon-img" src="https://i.postimg.cc/0NLGPF8y/bug.png" alt="button-bug">
           </button>
           <button type="button" class="button btn-type" value="Fire">
@@ -138,11 +140,11 @@
           Alfabetico
           <button type="button" class="order" id="moda-descendente">Pokemones por tipo</button>
         </div>
-        <div id="showTypes"></div>
+        <div class="show-pokemons-result"></div>
       </div>
       </container>
 
-    <container id="howToPlayView">
+    <container class="view-three">
 
       <div class="guide-introduction">
         <p>Para tener en cuenta... PokemonGo utiliza GPS, ya que se combina con el mundo real.
@@ -276,12 +278,6 @@
 
           </div>
     </container>
-
-    <container id="pokemonsView">
-      <h1>Hola pokemon</h1>
-
-    </container>
-    
 
     <div class="to-top">
       <a href="#top">
