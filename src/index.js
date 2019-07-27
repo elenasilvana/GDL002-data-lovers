@@ -1,43 +1,55 @@
 
+//elementos del nav
+document.getElementById("welcome").addEventListener("click", screenOne);
+document.getElementById("story").addEventListener("click", screenTwo);
+document.getElementById("howToPlay").addEventListener("click", screenThree);
+document.getElementById("pokemons").addEventListener("click", screenFour);
 
-document.getElementById("welcome").addEventListener("click", showWelcome);
-document.getElementById("story").addEventListener("click", showStory);
-document.getElementById("howToPlay").addEventListener("click", showHowToPlay);
-document.getElementById("pokemons").addEventListener("click", showPokemons1);
-
-const viewOne = document.getElementById("welcomeView");
+//div correspondiente
+//const viewOne = document.getElementById("welcomeView");
 const viewTwo =document.getElementById("storyView");
 const viewThree =document.getElementById("howToPlayView");
-const viewFour = document.getElementById("pokemonsView");
+//const viewFour = document.getElementById("pokemonsView");
 
-function showWelcome(){
-	viewOne.style.display = 'block';
+//select by class
+const one = document.getElementsByClassName('view-one')[0];
+const four= document.getElementsByClassName('view-four')[0];
+console.log('aqui four', four )
+
+function pokepoke(){
+	four.style.display = 'block';
+}
+
+function screenOne(){
+	//debugger;
+	one.style.display = 'block';
 	viewTwo.style.display = 'none';
 	viewThree.style.display = 'none';
-	viewFour.style.display = 'none';
+	four.style.display = 'none';
 
 }
 
-function showStory(){
-	viewOne.style.display = 'none'
+function screenTwo(){
+	one.style.display = 'none'
 	viewTwo.style.display = 'block';
 	viewThree.style.display = 'none';
 	viewFour.style.display = 'none';
 }
 
-function showHowToPlay(){
-	
-	viewOne.style.display = 'none';
+function screenThree(){
+	//debugger;
+	one.style.display = 'none';
 	viewTwo.style.display = 'none';
 	viewThree.style.display = 'block';
-	viewFour.style.display = 'none';
+	four.style.display = 'none';
 }
 
-function showPokemons1(){
-	viewOne.style.display = 'none';
+function screenFour(){
+	one.style.display = 'none';
 	viewTwo.style.display = 'none';
 	viewThree.style.display = 'none';
-	viewFour.style.display = 'block';
+	four.style.display = 'block';
+	//debugger;
 
 }
 
@@ -97,6 +109,7 @@ buttonsType.forEach((button)=>{
 	button.addEventListener('click', (e)=>{showFilter(e.target.value)});
 })
 
+/*
 let alphabeticalSwitch = document.getElementById("alphabetical-Switch");
 alphabeticalSwitch.addEventListener('change', function() {
 		if (alphabeticalSwitch.checked){
@@ -105,7 +118,7 @@ alphabeticalSwitch.addEventListener('change', function() {
 		else {
 			showAlphabeticalInverse();
 		};});
-
+*/
 //boton A-Z
 function showAlphabetical () {
 	const allPokemons = POKEMON.pokemon;

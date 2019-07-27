@@ -92,7 +92,19 @@ background: transparent;
   padding: 20px;
 }
 
+/*
 #welcomeView{
+  background: #F7F8F8; 
+  background: -webkit-linear-gradient(to top, #ACBB78, #F7F8F8);
+  background: linear-gradient(to top, #ACBB78, #F7F8F8); 
+  
+  font-size: 1.5em;
+  text-align: center;
+  padding: 12% 10% 0% 15%;
+  display: block;
+}*/
+
+.view-one{
   background: #F7F8F8;  /* fallback for old browsers */
   background: -webkit-linear-gradient(to top, #ACBB78, #F7F8F8);  /* Chrome 10-25, Safari 5.1-6 */
   background: linear-gradient(to top, #ACBB78, #F7F8F8); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
@@ -138,6 +150,12 @@ background: linear-gradient(to right, #FFFFFF, #ECE9E6); /* W3C, IE 10+/ Edge, F
   background-image: linear-gradient(gray, white);
   display: none;
   padding: 8% 8% 8% 8%;
+}
+
+.view-four{
+  display:none;
+  padding: 12% 10% 0% 15%;
+
 }
 
 #pokemonsView > p{
