@@ -1,26 +1,20 @@
-
+//menu bar
 const menuOption = document.querySelectorAll('.menu a');
-console.log(menuOption);
 
+//button
+const goTopButton = document.getElementsByClassName('go-top')[0];
 
-//select by class
+//screen element
 const one = document.getElementsByClassName('view-one')[0];
 const two = document.getElementsByClassName('view-two')[0];
 const three = document.getElementsByClassName('view-three')[0];
 const four= document.getElementsByClassName('view-four')[0];
-console.log('aqui two', two )
-
-function pokepoke(){
-	four.style.display = 'block';
-}
 
 function screenOne(){
-	//debugger;
 	one.style.display = 'block';
 	two.style.display = 'none';
 	three.style.display = 'none';
 	four.style.display = 'none';
-
 }
 
 function screenTwo(){
@@ -31,7 +25,6 @@ function screenTwo(){
 }
 
 function screenThree(){
-	//debugger;
 	one.style.display = 'none';
 	two.style.display = 'none';
 	three.style.display = 'block';
@@ -43,10 +36,9 @@ function screenFour(){
 	two.style.display = 'none';
 	three.style.display = 'none';
 	four.style.display = 'block';
-	//debugger;
-
 }
 
+//call the screen from the option menu selected
 function menuSelection(e){
 	const selectedScreen = `screen${e.target.id}`;
 	window[selectedScreen]();
@@ -59,6 +51,8 @@ menuOption.forEach((element)=>{
 function goTop(){
 	window.scrollTo(0,0);
 }
+
+goTopButton.addEventListener('click', goTop);
 
 function pokemonIconTemplate(pokemon){
 	return `
@@ -89,12 +83,11 @@ function pokemonIcon (data, message){
 	${data.map(pokemonIconTemplate).join("")}`;
 }
 
-//funcion de prueba para mostrar el tipo
+
 function showFilter(type){
 	const pokemonresult = document.getElementsByClassName('show-pokemons-result')[0];
 	pokemonresult.innerHTML = "";
 	const typeResult = window.filterType(POKEMON.pokemon, type);
-	console.log(typeResult);
 	let mesage;
 	if(typeResult.length === 0) {
 		message= `No se encontraron Pokemones de tipo ${type} en la primera generación`;
@@ -106,7 +99,6 @@ function showFilter(type){
 	}
 }
  
-
 const buttonsType = document.querySelectorAll('.btn-type');
 
 buttonsType.forEach((button)=>{
@@ -121,7 +113,8 @@ alphabeticalSwitch.addEventListener('change', function() {
 		}
 		else {
 			showAlphabeticalInverse();
-		};});
+		};
+	});
 
 //boton A-Z
 function showAlphabetical () {
@@ -147,7 +140,7 @@ zToA.addEventListener("click", showAlphabeticalInverse);
 
 
 function showModaResult () {
-const resultModa = moda(POKEMON.pokemon);
+const resultModa = window.moda(POKEMON.pokemon);
 const templateModa= `
 <div class="moda">
 	<p><img class="icon-img" src="https://i.postimg.cc/J0KBD2WJ/poison.png">

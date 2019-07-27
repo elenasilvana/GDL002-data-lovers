@@ -92,6 +92,19 @@ background: transparent;
   padding: 20px;
 }
 
+.go-top{
+  position: fixed;
+  background:none;
+  color:inherit;
+  border:none; 
+  padding:0;
+  font: inherit;
+  /*border is optional*/
+  cursor: pointer;
+  bottom: center;
+  right: 5%;
+}
+
 /*
 #welcomeView{
   background: #F7F8F8; 
