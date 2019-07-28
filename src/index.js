@@ -59,19 +59,15 @@ function pokemonIconTemplate(pokemon){
 	<div class="poke-box">
 		<div class="pokemon-name">
 			<img src="${pokemon.img}">
-			${pokemon.name.toUpperCase()}
 		</div>
 		<div class="detail">
+		<h2>Conoce a</h2>
+		<h2>${pokemon.name}</h2>
 			<img src="${pokemon.img}">
-			<h2>${pokemon.name} / ${pokemon.num}
-			<br>
-			Tipo: ${pokemon.type}</h2>
-			<h3>Dulce con el que evoluciona:</h3> 
+			<p>#${pokemon.num}</p>
+			<p>Tipo: ${pokemon.type}</p>
+			<p>Dulce con el que evoluciona:</p> 
 			<p>-${pokemon.candy}.</p>
-			<h3>Caramelos que necesitas para su siguiente Evolución:</h3>
-			<p>-${pokemon.candy_count}.</p>
-			<h3>${pokemon.name} aparece en huevos de:</h3>
-			<p>-${pokemon.egg}.</p>
 		</div>
 	</div>
 `; 
@@ -88,15 +84,11 @@ function showFilter(type){
 	const pokemonresult = document.getElementsByClassName('show-pokemons-result')[0];
 	pokemonresult.innerHTML = "";
 	const typeResult = window.filterType(POKEMON.pokemon, type);
-	let mesage;
-	if(typeResult.length === 0) {
-		message= `No se encontraron Pokemones de tipo ${type} en la primera generación`;
-		pokemonresult.innerHTML = mesage;
-	}
-	else {
-		message = `Conoce los pokemones de tipo ${type} (${typeResult.length} resultados)`;
-	pokemonIcon(typeResult, message);	
-	}
+	let message;
+	
+	typeResult.length === 0 ?  message= `No se encontraron Pokemones de tipo ${type} en la primera generación` : message = `Conoce los pokemones de tipo ${type} (${typeResult.length} resultados)` 
+	pokemonIcon(typeResult, message);
+
 }
  
 const buttonsType = document.querySelectorAll('.btn-type');
