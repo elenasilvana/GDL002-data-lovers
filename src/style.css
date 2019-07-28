@@ -53,26 +53,33 @@ input:checked + .slider:before {
 
 .body-u{
   text-align: center;
-  min-height: 100%;
-  min-width: 100%;
-
 }
 
 html, body{
   font-family: 'Average Sans', sans-serif; 
+  line-height: 1em;
+  /*
   height: 100%;
   width: 100%;
-  background: #F2FAF3;
   background-size: cover;
+  */
+  background: white;
   padding: 0;
   margin: 0;
   top: 0;
   left: 0;
+
+  display:flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+	width: 100%;
+	max-width: 100%;
 }
 
 .menu nav{
+background: transparent;
   width: 100%;
-  background: #3BC458;
   float: left;
   border-radius: 5px;
 }
@@ -85,75 +92,115 @@ html, body{
 }
 .menu li a{
   font-size: 2em;
-  color: #fff;
+  color: purple;
   text-decoration: none;
   display: block;
   padding: 20px;
 }
 
-#welcomeView{
+.go-top{
+  z-index: 1;
+  position: fixed;
+  background:none;
+  color:purple;
+  border: transparent; 
+  padding:0;
+  font: inherit;
+  /*border is optional*/
+  cursor: pointer;
+  bottom: center;
+  right: 10%;
+  top: 50%;
+}
+
+.view-one{
+  background: #F7F8F8;  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to top, #ACBB78, #F7F8F8);  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to top, #ACBB78, #F7F8F8); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+ /* font-size: 1.5em;
+  text-align: center;
+  display: block;
+  width: 100%;
+  margin: 0 auto;*/
+  width: 100%;
+  margin: 0 auto;
   font-size: 1.5em;
   text-align: center;
-  padding: 12% 10% 0% 15%;
-  background: #37CCDB;
   display: block;
+
 }
 
-#welcomeView h4{
-  font-size: 2em;
+.home-content{
+  width: 80%;
+  margin: 0 auto;
+  height: 100vh;
 }
 
-#storyView{
+.view-two{
+  background: #1D2B64;  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to bottom, #F8CDDA, #1D2B64);  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to bottom, #F8CDDA, #1D2B64); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  
   font-size: 1.5em;
-  padding: 10%;
-  background: #0897CC;
   display: none;
+  width: 100%;
+  margin: 0 auto;
 }
 
-#storyView img{
+.about-pokemon-content{
+  width: 80%;
+  margin: 0 auto;
+
+}
+
+.view-two img{
   width: 40%;
 }
 
-#howToPlayView{
+.view-three{
+  background: #ECE9E6;  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to right, #FFFFFF, #ECE9E6);  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to right, #FFFFFF, #ECE9E6); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  
+  width: 100%;
+  margin: 0 auto;
+    font-size: 1.5em;
+    text-align: center;
+    display: none;
+}
+
+.view-four{
+  width: 100%;
+  margin: 0 auto;
   font-size: 1.5em;
   text-align: center;
-  padding: 10% 10% 0% 10%;
-  background: #D17854;
   display: none;
 }
 
-#howToPlayView div{
-  float: left;
-  text-align:center;
-  margin: 3% 3%;
+.pokemon-content{
+  display:flex;
+  flex-direction: column;
+  width: 80%;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto;
 }
 
-#howToPlayView h4{
-  font-size: 1.9em;
+.buttons-type{
+  width: 100%;
 }
 
-
-.pokemon-go{
+.show-pokemons-result{
+  width: 100%;
+  margin: auto;
+  display: -webkit-flex;
+  /*align-content: center;
+  align-items: center;*/
+  justify-content: space-around;
+  flex-wrap: wrap;
+  color: #252525;
+  font-size: 1em;
 }
-
-#pokemonsView{
-  text-align: center;
-  font-size: 1.95em;
-  height: 200px;
-  background-color: gray; 
-  background-image: linear-gradient(gray, white);
-  display: none;
-  padding: 8% 8% 8% 8%;
-}
-
-#pokemonsView > p{
-  font-size: 1.5em;
-}
-
-#buttonsType{
-  padding: 0% 3%;
-}
-
 
 #button{
   list-style: none;
@@ -175,7 +222,7 @@ html, body{
   padding: 4% 5% 5% 5%;
   margin: 1% 1%;
   float: left;
-  background-color: #EAD8F3;
+  background-color: #f4f4f4;
   box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.1);
   border-radius: 10px;
   position: relative;
@@ -187,12 +234,13 @@ html, body{
 }
 
 .pokemon-name{
+  margin: 0 auto;
   padding: 100%;
   width: 100%;
   height: 100%;
-  background-color: #B1B0D8;
+  background-color: #e9eaeb;
   text-align: center;
-  font-size: 0.95em;
+  font-size: 12pt;
   color: #fff;
   position: absolute;
   overflow:hidden;
@@ -205,6 +253,11 @@ html, body{
   align-items: center;
   align-self: center;
   justify-content: space-around;
+}
+
+.pokemon-name img{
+  height: 200px;
+  width: 200px;
 }
 
 
@@ -229,11 +282,8 @@ iconos de botón de tipo
 */
 
 .icon-img{
-  width: 100px;
-}
-
-.icon{
-  width: 150px;
+  width: 170px;
+  padding: 1em;
 }
 
 .detail p{
@@ -283,10 +333,8 @@ z-index: 100;
 }*/
 
 button{
-  font-family: 'Reenie Beanie';
-  font-size: 0.95em;
   background: none;
-  border-radius: 100%;
+  border-radius: 10%;
   border: 0;
   outline: none;
 }
@@ -305,9 +353,10 @@ a{
 }
 
 a:visited{
-  color: #939393;
+  color: orange;
 }
 
+/*
 h1{
   text-align: center;
   font-size: 0.55em;
@@ -323,7 +372,9 @@ h3{
   text-align: left;
   font-size: 0.65em;
   color: #939393;
-}
+}*/
+
+/*
 .contenedor{
   height: 0%;
   overflow: hidden;
@@ -331,12 +382,48 @@ h3{
   padding-top: 25%;
   position: relative;
 
+  .contenedor img{
+    height: 100%;
+    left: 0%;
+    position: absolute;
+    top:0%;
+    max-width: 100%;
+    
+  }
+}*/
+  
+.guide-introduction{
+  width: 80%;
+  margin: 0 auto;
 }
-.contenedor img{
-  height: 100%;
-  left: 0%;
-  position: absolute;
-  top:0%;
-  max-width: 100%;
 
+.glosary-img{
+  width: 250px;
+  height: 250px;
+}
+
+.glosary-content{
+  display:flex;
+  flex-direction: column;
+  
+}
+
+.div-row{
+  height: 60vh;
+}
+
+.glosary-right{
+  float: left;
+  width: 60%;
+  display:flex;
+  justify-content: center;
+  align-content: center;
+}
+
+.glosary-left{
+  float:left;
+  width: 40%;
+  display:flex;
+  justify-content: center;
+  align-content: center;
 }

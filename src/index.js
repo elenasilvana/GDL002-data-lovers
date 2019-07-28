@@ -1,157 +1,102 @@
+//menu bar
+const menuOption = document.querySelectorAll('.menu a');
 
+//button
+const goTopButton = document.getElementsByClassName('go-top')[0];
 
-document.getElementById("welcome").addEventListener("click", showWelcome);
-document.getElementById("story").addEventListener("click", showStory);
-document.getElementById("howToPlay").addEventListener("click", showHowToPlay);
-document.getElementById("pokemons").addEventListener("click", showPokemons1);
+//screen element
+const one = document.getElementsByClassName('view-one')[0];
+const two = document.getElementsByClassName('view-two')[0];
+const three = document.getElementsByClassName('view-three')[0];
+const four= document.getElementsByClassName('view-four')[0];
 
-const viewOne = document.getElementById("welcomeView");
-const viewTwo = document.getElementById("storyView");
-const viewThree =document.getElementById("howToPlayView");
-const viewFour = document.getElementById("pokemonsView");
-
-function showWelcome(){
-	viewOne.style.display = 'block';
-	viewTwo.style.display = 'none';
-	viewThree.style.display = 'none';
-	viewFour.style.display = 'none';
-
+function screenOne(){
+	one.style.display = 'block';
+	two.style.display = 'none';
+	three.style.display = 'none';
+	four.style.display = 'none';
 }
 
-function showStory(){
-	viewOne.style.display = 'none'
-	viewTwo.style.display = 'block';
-	viewThree.style.display = 'none';
-	viewFour.style.display = 'none';
+function screenTwo(){
+	one.style.display = 'none'
+	two.style.display = 'block';
+	three.style.display = 'none';
+	four.style.display = 'none';
 }
 
-function showHowToPlay(){
-	
-	viewOne.style.display = 'none';
-	viewTwo.style.display = 'none';
-	viewThree.style.display = 'block';
-	viewFour.style.display = 'none';
+function screenThree(){
+	one.style.display = 'none';
+	two.style.display = 'none';
+	three.style.display = 'block';
+	four.style.display = 'none';
 }
 
-function showPokemons1(){
-	viewOne.style.display = 'none';
-	viewTwo.style.display = 'none';
-	viewThree.style.display = 'none';
-	viewFour.style.display = 'block';
-
+function screenFour(){
+	one.style.display = 'none';
+	two.style.display = 'none';
+	three.style.display = 'none';
+	four.style.display = 'block';
 }
+
+//call the screen from the option menu selected
+function menuSelection(e){
+	const selectedScreen = `screen${e.target.id}`;
+	window[selectedScreen]();
+}
+
+menuOption.forEach((element)=>{
+	element.addEventListener('click', menuSelection);
+})
+
+function goTop(){
+	window.scrollTo(0,0);
+}
+
+goTopButton.addEventListener('click', goTop);
 
 function pokemonIconTemplate(pokemon){
 	return `
 	<div class="poke-box">
 		<div class="pokemon-name">
 			<img src="${pokemon.img}">
-			${pokemon.name.toUpperCase()}
 		</div>
 		<div class="detail">
+		<h2>Conoce a</h2>
+		<h2>${pokemon.name}</h2>
 			<img src="${pokemon.img}">
-			<h2>${pokemon.name} / ${pokemon.num}
-			<br>
-			Tipo: ${pokemon.type}</h2>
-			<h3>Dulce con el que evoluciona:</h3> 
+			<p>#${pokemon.num}</p>
+			<p>Tipo: ${pokemon.type}</p>
+			<p>Dulce con el que evoluciona:</p> 
 			<p>-${pokemon.candy}.</p>
-			<h3>Caramelos que necesitas para su siguiente Evolución:</h3>
-			<p>-${pokemon.candy_count}.</p>
-			<h3>${pokemon.name} aparece en huevos de:</h3>
-			<p>-${pokemon.egg}.</p>
 		</div>
 	</div>
 `; 
 }
 
-function pokemonIcon (data){
-	document.getElementById("showTypes").innerHTML = `
-	<p>Conoce los pokemones de tipo: (${data.length} resultados)</p>
+function pokemonIcon (data, message){
+	const pokemonresult = document.getElementsByClassName('show-pokemons-result')[0];
+	pokemonresult.innerHTML = `<h3> ${message} <h3>
 	${data.map(pokemonIconTemplate).join("")}`;
 }
 
-//funcion de prueba para mostrar el tipo
+
 function showFilter(type){
-	let divPokemonList = document.getElementById('showTypes');
-	divPokemonList.innerHTML = "";
-	const typeResult = window.filterType(POKEMON.pokemon, type.value);
-	//console.log(typeResult);
-	if (typeResult == []) {
-		divPokemonList.innerHTML= "No se encuentran Pokemones de este tipo en la primera generación";
-	}
-	else {
-	pokemonIcon(typeResult);	
-	}
-	return typeResult;
+	const pokemonresult = document.getElementsByClassName('show-pokemons-result')[0];
+	pokemonresult.innerHTML = "";
+	const typeResult = window.filterType(POKEMON.pokemon, type);
+	let message;
+	
+	typeResult.length === 0 ?  message= `No se encontraron Pokemones de tipo ${type} en la primera generación` : message = `Conoce los pokemones de tipo ${type} (${typeResult.length} resultados)` 
+	pokemonIcon(typeResult, message);
+
 }
+ 
+const buttonsType = document.querySelectorAll('.btn-type');
 
+buttonsType.forEach((button)=>{
+	button.addEventListener('click', (e)=>{showFilter(e.target.value)});
+})
 
-//funciones que muestran el tipo
-//llamando funcion de prueba que muestra el tipo, aparece activada sin hacer click
-/*
-
-Se puede refactorizar el codigo de los botones
-llamar del dom x clase
-array.from
-iterar
-event.target
-
-se llamaban las clases, se generaba un arreglo con esas clases
-
-*/ 
-
-
-const grass = document.getElementById("typeGrass");
-grass.addEventListener("click", function () {
-	showFilter(grass);});
-
-const water = document.getElementById("typeWater");
-water.addEventListener("click",function () {showFilter(water);});
-
-const ground = document.getElementById("typeGround");
-ground.addEventListener("click",function () {showFilter(ground);});
-
-const psychic = document.getElementById("typePsychic");
-psychic.addEventListener("click",function () {showFilter(psychic);});
-
-const ghost = document.getElementById("typeGhost");
-ghost.addEventListener("click",function () {showFilter(ghost);});
-
-const dark = document.getElementById("typeDark");
-dark.addEventListener("click",function () {showFilter(dark);});
-
-const poison = document.getElementById("typePoison");
-poison.addEventListener("click",function () {showFilter(poison);});
-
-const fighting = document.getElementById("typeFighting");
-fighting.addEventListener("click",function () {showFilter(fighting);});
-
-const steel = document.getElementById("typeSteel");
-steel.addEventListener("click",function () {showFilter(steel);});
-
-const bug = document.getElementById("typeBug");
-bug.addEventListener("click",function () {showFilter(bug);});
-
-const fire = document.getElementById("typeFire");
-fire.addEventListener("click",function () {showFilter(fire);});
-
-const dragon = document.getElementById("typeDragon");
-dragon.addEventListener("click",function () {showFilter(dragon);});
-
-const flying = document.getElementById("typeFlying");
-flying.addEventListener("click",function () {showFilter(flying);});
-
-const normal = document.getElementById("typeNormal");
-normal.addEventListener("click",function () {showFilter(normal);});
-
-const electric = document.getElementById("typeElectric");
-electric.addEventListener("click",function () {showFilter(electric);});
-
-const rock = document.getElementById("typeRock");
-rock.addEventListener("click",function () {showFilter(rock);});
-
-const ice = document.getElementById("typeIce");
-ice.addEventListener("click",function () {showFilter(ice);});
 
 let alphabeticalSwitch = document.getElementById("alphabetical-Switch");
 alphabeticalSwitch.addEventListener('change', function() {
@@ -160,7 +105,8 @@ alphabeticalSwitch.addEventListener('change', function() {
 		}
 		else {
 			showAlphabeticalInverse();
-		};});
+		};
+	});
 
 //boton A-Z
 function showAlphabetical () {
@@ -186,7 +132,7 @@ zToA.addEventListener("click", showAlphabeticalInverse);
 
 
 function showModaResult () {
-const resultModa = moda(POKEMON.pokemon);
+const resultModa = window.moda(POKEMON.pokemon);
 const templateModa= `
 <div class="moda">
 	<p><img class="icon-img" src="https://i.postimg.cc/J0KBD2WJ/poison.png">
@@ -241,9 +187,10 @@ const templateModa= `
 		<br>
 		Acero: 0</p>
 </div>`;
-document.getElementById("showTypes").innerHTML= templateModa;
+const pokemonresult = document.getElementsByClassName('show-pokemons-result')[0];
+pokemonresult.innerHTML= templateModa;
 
 }
 
-const botonModaDescendente= document.getElementById("moda-descendente");
+const botonModaDescendente = document.getElementById("moda-descendente");
 botonModaDescendente.addEventListener("click", showModaResult);
