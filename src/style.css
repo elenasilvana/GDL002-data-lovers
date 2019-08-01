@@ -63,7 +63,7 @@ html, body{
   width: 100%;
   background-size: cover;
   */
-  background: white;
+  background:transparent;
   padding: 0;
   margin: 0;
   top: 0;
@@ -123,6 +123,7 @@ background: transparent;
   width: 100%;
   margin: 0 auto;*/
   width: 100%;
+  height: 100%;
   margin: 0 auto;
   font-size: 1.5em;
   text-align: center;
@@ -133,8 +134,10 @@ background: transparent;
 .home-content{
   width: 80%;
   margin: 0 auto;
-  height: 100vh;
+  height: 100%;
 }
+
+
 
 .view-two{
   background: #1D2B64;  /* fallback for old browsers */
@@ -201,6 +204,7 @@ background: transparent;
   color: #252525;
   font-size: 1em;
 }
+
 
 #button{
   list-style: none;
@@ -330,7 +334,8 @@ z-index: 100;
   margin: 0%;
   color: #ffff;
   font-size: 0.95em;
-}*/
+}
+*/
 
 button{
   background: none;
@@ -391,6 +396,13 @@ h3{
     
   }
 }*/
+
+.gif-img{
+  width: 60%;
+  height: auto;
+  margin-top: 20%;
+  margin-bottom: 30%;
+}
   
 .guide-introduction{
   width: 80%;
@@ -398,11 +410,12 @@ h3{
 }
 
 .glosary-img{
-  width: 250px;
-  height: 250px;
+  width: 35%;
+  height: auto;
 }
 
 .glosary-content{
+  margin-top: 20%;
   display:flex;
   flex-direction: column;
   
