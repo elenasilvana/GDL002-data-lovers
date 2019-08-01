@@ -1,8 +1,13 @@
+/*const asd = require('../src/data/pokemon/pokemon.json');
+console.log(asd);*/
+
 //menu bar
 const menuOption = document.querySelectorAll('.menu a');
 
 //button
 const goTopButton = document.getElementsByClassName('go-top')[0];
+
+//const HOLI = require('../src/data/pokemon/pokemon');
 
 //screen element
 const one = document.getElementsByClassName('view-one')[0];
@@ -74,6 +79,10 @@ function pokemonIconTemplate(pokemon){
 }
 
 function pokemonIcon (data, message){
+	if(message === undefined){
+		message = "";
+		console.log(message);
+	}
 	const pokemonresult = document.getElementsByClassName('show-pokemons-result')[0];
 	pokemonresult.innerHTML = `<h3> ${message} <h3>
 	${data.map(pokemonIconTemplate).join("")}`;
@@ -81,9 +90,11 @@ function pokemonIcon (data, message){
 
 
 function showFilter(type){
+	console.log(type);
 	const pokemonresult = document.getElementsByClassName('show-pokemons-result')[0];
 	pokemonresult.innerHTML = "";
 	const typeResult = window.filterType(POKEMON.pokemon, type);
+	console.log(typeResult);
 	let message;
 	
 	typeResult.length === 0 ?  message= `No se encontraron Pokemones de tipo ${type} en la primera generación` : message = `Conoce los pokemones de tipo ${type} (${typeResult.length} resultados)` 

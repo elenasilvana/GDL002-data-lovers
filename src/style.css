@@ -63,7 +63,7 @@ html, body{
   width: 100%;
   background-size: cover;
   */
-  background: white;
+  background:transparent;
   padding: 0;
   margin: 0;
   top: 0;
@@ -136,6 +136,8 @@ background: transparent;
   height: 100vh;
 }
 
+
+
 .view-two{
   background: #1D2B64;  /* fallback for old browsers */
   background: -webkit-linear-gradient(to bottom, #F8CDDA, #1D2B64);  /* Chrome 10-25, Safari 5.1-6 */
@@ -201,6 +203,7 @@ background: transparent;
   color: #252525;
   font-size: 1em;
 }
+
 
 #button{
   list-style: none;
@@ -330,7 +333,8 @@ z-index: 100;
   margin: 0%;
   color: #ffff;
   font-size: 0.95em;
-}*/
+}
+*/
 
 button{
   background: none;
@@ -391,15 +395,23 @@ h3{
     
   }
 }*/
+
+.gif-img{
+  width: 60%;
+  height: auto;
+  margin-bottom: 30%;
+}
   
 .guide-introduction{
   width: 80%;
   margin: 0 auto;
 }
 
+
+
 .glosary-img{
-  width: 250px;
-  height: 250px;
+  width: 35%;
+  height: auto;
 }
 
 .glosary-content{
