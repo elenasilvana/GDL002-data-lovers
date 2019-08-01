@@ -8,6 +8,13 @@ const menuOption = document.querySelectorAll('.menu a');
 const goTopButton = document.getElementsByClassName('go-top')[0];
 
 //const HOLI = require('../src/data/pokemon/pokemon');
+const btnModa = document.getElementsByClassName('btn-moda')[0];
+console.log(btnModa);
+btnModa.addEventListener("click", showModaResult);
+
+function modaRes(){
+console.log('holi mundi');
+}
 
 //screen element
 const one = document.getElementsByClassName('view-one')[0];
@@ -97,15 +104,30 @@ function showFilter(type){
 	console.log(typeResult);
 	let message;
 	
+	if(typeResult === 0){
+		message= `No se encontraron Pokemones de tipo ${type} en la primera generación`;
+		pokemonIcon(typeResult, message);
+	}
+	else if(typeResult){
+		message = `Conoce los pokemones de tipo ${type} (${typeResult.length} resultados)`;
+		pokemonIcon(typeResult, message); 
+	}
+
+	/*
 	typeResult.length === 0 ?  message= `No se encontraron Pokemones de tipo ${type} en la primera generación` : message = `Conoce los pokemones de tipo ${type} (${typeResult.length} resultados)` 
-	pokemonIcon(typeResult, message);
+	pokemonIcon(typeResult, message);*/
 
 }
  
 const buttonsType = document.querySelectorAll('.btn-type');
 
 buttonsType.forEach((button)=>{
-	button.addEventListener('click', (e)=>{showFilter(e.target.value)});
+	//button.addEventListener('click', (e)=>{showFilter(e.target.value)});
+button.addEventListener('click', (e)=>{
+	console.log(e.target.id);
+	showFilter(e.target.id)
+});
+
 })
 
 
@@ -142,8 +164,9 @@ const zToA = document.getElementById("alphabeticalInverse");
 zToA.addEventListener("click", showAlphabeticalInverse);
 
 
-function showModaResult () {
+function showModaResult() {
 const resultModa = window.moda(POKEMON.pokemon);
+console.log(resultModa);
 const templateModa= `
 <div class="moda">
 	<p><img class="icon-img" src="https://i.postimg.cc/J0KBD2WJ/poison.png">
@@ -203,5 +226,4 @@ pokemonresult.innerHTML= templateModa;
 
 }
 
-const botonModaDescendente = document.getElementById("moda-descendente");
-botonModaDescendente.addEventListener("click", showModaResult);
+
